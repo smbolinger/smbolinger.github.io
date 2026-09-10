@@ -25,18 +25,12 @@ description: >- # this means to ignore newlines until "baseurl:"
   Ecological modeling, bird banding.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://smbolinger.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-
 twitter_username: SarahMBolinger
 github_username:  smbolinger
-
 # Build settings
 theme: minima
-# if using theme: minima, remember to also edit index.md layout from default to home
-# minima: nav_pages: - about.md # - projects.md - teaching.md
-
-# remote_theme: pages-themes/minimal@v0.2.0 ## index.md layout should be default, not home
 plugins:
-  - jekyll-feed # - jekyll-remote-theme # add this line to the plugins list when using pages-themes/minimal
+  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
