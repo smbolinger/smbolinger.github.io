@@ -19,7 +19,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: why is this repeated
+title: Sarah Bolinger
 email: sarah.bolinger@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Ecological modeling, bird banding.
