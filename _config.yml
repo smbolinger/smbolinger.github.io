@@ -19,30 +19,30 @@
 # in the templates via {{ site.myvariable }}.
 
 title: why is this repeated
-email: sarah.bolinger@gmail.com
+# email: sarah.bolinger@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Ecological modeling, bird banding.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://smbolinger.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 author:
-  name: ""
+  name: Sarah Bolinger
   email: sarah.bolinger@gmail.com
 
 twitter_username: SarahMBolinger
 github_username:  smbolinger
 
 # Build settings
-theme: minima
+# theme: minima
 # if using theme: minima, remember to also edit index.md layout from default to home
-minima:
-  nav_pages:
-    - about.md
+# minima:
+  # nav_pages:
+    # - about.md
     # - projects.md
     # - teaching.md
 
-# remote_theme: pages-themes/minimal@v0.2.0 ## index.md layout should be default, not home
+remote_theme: pages-themes/minimal@v0.2.0 ## index.md layout should be default, not home
 plugins:
-  # - jekyll-remote-theme # add this line to the plugins list when using pages-themes/minimal
+  - jekyll-remote-theme # add this line to the plugins list when using pages-themes/minimal
   - jekyll-feed
 
 # Exclude from processing.
