@@ -32,16 +32,17 @@ twitter_username: SarahMBolinger
 github_username:  smbolinger
 
 # Build settings
-# theme: minima
+theme: minima
 # if using theme: minima, remember to also edit index.md layout from default to home
-# minima:
-  # nav_pages:
-    # - about.md
-    # - cv.md
+minima:
+  nav_pages:
+    - about.md
+    # - projects.md
+    # - teaching.md
 
-remote_theme: pages-themes/minimal@v0.2.0 ## index.md layout should be default, not home
+# remote_theme: pages-themes/minimal@v0.2.0 ## index.md layout should be default, not home
 plugins:
-  - jekyll-remote-theme # add this line to the plugins list when using pages-themes/minimal
+  # - jekyll-remote-theme # add this line to the plugins list when using pages-themes/minimal
   - jekyll-feed
 
 # Exclude from processing.
