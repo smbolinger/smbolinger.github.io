@@ -35,9 +35,9 @@ github_username:  smbolinger
 # Build settings
 theme: minima
 # if using theme: minima, remember to also edit index.md layout from default to home
-minima:
-  nav_pages:
-    - about.md
+# minima:
+  # nav_pages:
+    # - about.md
     # - projects.md
     # - teaching.md
 
