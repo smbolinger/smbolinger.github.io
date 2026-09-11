@@ -24,8 +24,11 @@ $type-size-6 : 0.66em;   // ~12px
 $type-size-7 : 0.6em; // ~11px
 $type-size-8 : 0.555em;  // ~10px
 
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
 .page {
   padding-bottom: 1 !important;
 }
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+html {
+  font-size: 18px;
+}
