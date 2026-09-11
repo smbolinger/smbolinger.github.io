@@ -39,10 +39,10 @@ html {
 }
 
 .page__title {
-  font-size: 1.5rem; // Mobile size default
+  font-size: 1.2rem; // Mobile size default
 
   @include breakpoint($medium) {
-    font-size: 1.9rem; // Desktop and tablet size
+    font-size: 1.5rem; // Desktop and tablet size
   }
 }
 
