@@ -38,6 +38,14 @@ html {
   font-size: 1.0rem !important; /* Adjust this value as needed (e.g., 14px, 1rem) */
 }
 
+.page__title {
+  font-size: 1.5rem; // Mobile size default
+
+  @include breakpoint($medium) {
+    font-size: 1.9rem; // Desktop and tablet size
+  }
+}
+
 // Change Sidebar Navigation Font Size
 // .nav__list {
 //  font-size: 0.85rem !important; /* Adjust this value as needed */
