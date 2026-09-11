@@ -29,13 +29,13 @@ $type-size-8 : 0.6em;  // ~10px
 .page {
   padding-bottom: 1 !important;
 }
-//html {
-//  font-size: 17px;
-//}
+html {
+ font-size: 19px;
+}
 
 // Change top header font size
 .masthead__menu-item {
-  font-size: 0.9rem !important; /* Adjust this value as needed (e.g., 14px, 1rem) */
+  font-size: 1.0rem !important; /* Adjust this value as needed (e.g., 14px, 1rem) */
 }
 
 // Change Sidebar Navigation Font Size
