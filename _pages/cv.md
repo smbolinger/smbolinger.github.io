@@ -13,7 +13,7 @@ permalink: /cv/
 <!--   <p>Your browser does not support viewing PDFs. </p> -->
 <!-- </object> -->
 <object 
-  data="{{ '/assets/pdfs/your-document.pdf#toolbar=0&navpanes=0' | relative_url }}" 
+  data="{{ 'https://smbolinger.github.io/assets/documents/bolinger_CV.pdf#toolbar=0&navpanes=0' | relative_url }}" 
   type="application/pdf" 
   width="90%" 
   height="70%">
