@@ -19,16 +19,26 @@ $type-size-1 : 1.841em;  // ~39.056px
 $type-size-2 : 1.553em;  // ~31.248px
 $type-size-3 : 1.263em;  // ~25.008px
 $type-size-4 : 1.05em;   // ~20px
-$type-size-5 : 0.7em;      // ~16px
-$type-size-6 : 0.66em;   // ~12px
-$type-size-7 : 0.6em; // ~11px
-$type-size-8 : 0.555em;  // ~10px
+$type-size-5 : 0.8em;      // ~16px
+$type-size-6 : 0.72em;   // ~12px
+$type-size-7 : 0.66em; // ~11px
+$type-size-8 : 0.6em;  // ~10px
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 .page {
   padding-bottom: 1 !important;
 }
-html {
-  font-size: 17px;
+//html {
+//  font-size: 17px;
+//}
+
+// Change top header font size
+.masthead__menu-item {
+  font-size: 0.9rem !important; /* Adjust this value as needed (e.g., 14px, 1rem) */
 }
+
+// Change Sidebar Navigation Font Size
+// .nav__list {
+//  font-size: 0.85rem !important; /* Adjust this value as needed */
+// }
