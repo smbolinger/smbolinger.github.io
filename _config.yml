@@ -29,6 +29,10 @@ twitter_username: SarahMBolinger
 github_username:  smbolinger
 # Build settings
 theme: minima
+header_pages:
+  - about.markdown
+  - projects.md
+  - cv.md
 plugins:
   - jekyll-feed
 
