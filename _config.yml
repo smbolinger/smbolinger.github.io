@@ -24,17 +24,38 @@ email: sarah.bolinger@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Ecological modeling, bird banding.
 baseurl: "" # the subpath of your site, e.g. /blog
+include: ["_pages"]
 url: "https://smbolinger.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: SarahMBolinger
-github_username:  smbolinger
-# Build settings
-theme: minima
-header_pages:
-  - about.markdown
-  - projects.md
-  - cv.md
+repository: "https://github.com/smbolinger"
+# twitter_username: SarahMBolinger
+# github_username:  smbolinger
+## Build settings
+# theme: minima ## minima 2.5
+# theme: minimal-mistakes-jekyll ## easier to use gemfile than remote themes? remote themes has many conflicts
+# minima:
+#   hide_site_feed_link: true
+#   social_links:
+#     # github: smbolinger
+#     # twitter: SarahMBolinger
+#     - title: smbolinger
+#       icon: github
+#       url: "https://github.com/smbolinger"
+#     # - title: SarahMBolinger
+#     #   icon: x-twitter
+#     #   url: "https://x.com/SarahMBolinger"
+#   nav_pages:
+#     - about.markdown
+#     - projects.md
+#     - cv.md
+# remote_theme: jekyll/minima ## this is the newer version of minima. files from minima 2.5 are in ../old_github.io
+# remote_theme: pages-themes/minimal@v0.2.0 ## this is the newer version of minima. files from minima 2.5 are in ../old_github.io
+remote_theme: "mmistakes/minimal-mistakes@4.28.1"
+# github:
+  # repository_url: https://github.com/smbolinger
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-include-cache
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -55,3 +76,18 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+#
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "single"
+      author_profile: true
+      classes: wide
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "single"
+      classes: wide

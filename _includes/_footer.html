@@ -6,8 +6,8 @@
 
   <div class="wrapper">
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col" style="display: flex; justify-content: space-between;">
+    <div class="footer-col-wrapper" style="display: flex; justify-content: space-between;">
+      <div class="footer-col">
       {%- if site.author %}
         <ul class="contact-list">
           {% if site.author.name -%}
@@ -24,7 +24,7 @@
         <!-- <a href="{{ '/assets/documents/bolinger_CV.pdf' | relative_url }}" download>Download CV</a> -->
       </div>
       <div class="social-links">
-        {%- include social.html -%}
+        <p> {%- include social.html -%} </p>
       </div>
 
     </div>
