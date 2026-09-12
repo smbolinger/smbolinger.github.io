@@ -1,4 +1,6 @@
 ---
-title: Projects
+title: Other Projects
 permalink: /projects/
 ---
+
+### 

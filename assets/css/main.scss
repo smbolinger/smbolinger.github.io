@@ -53,3 +53,18 @@ html {
 .site-title {
   font-size: 1.2rem; // Adjust this value to your preferred size
 }
+.indented-section {
+  margin-left: 2rem; /* Adjust the spacing as needed */
+}
+
+.indented-section h1,
+.indented-section h2,
+.indented-section h3,
+.indented-section p {
+  margin-left: 1rem; /* Keeps internal element spacing clean */
+}
+
+.page-content h3, 
+.post-content h3 {
+  padding-left: 40px; /* Adjust the space as needed */
+}

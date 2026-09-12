@@ -52,6 +52,11 @@ repository: "https://github.com/smbolinger"
 remote_theme: "mmistakes/minimal-mistakes@4.28.1"
 # github:
   # repository_url: https://github.com/smbolinger
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/smbolinger"
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
