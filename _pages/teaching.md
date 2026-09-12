@@ -3,4 +3,15 @@ title: Teaching Philosophy
 permalink: /teaching/
 ---
 
-I am primarily looking to teach courses in ecology, ornithology, or non-majors biology. I enjoy teaching courses that incorporate field observation, data analysis, and writing. Within the realm of teaching, I am interested in helping students develop writing and critical thinking skills through activities that relate to course material. I am also committed to improving scientific literacy by looking at common ways in which graphs and data are misinterpreted in the media and on social media. I will seek to implement evidence-based scientific literacy activities in classes for both majors and non-majors. In addition, I will include R-based activities whenever possible for biology majors to help improve their technological literacy. Exposure to data analysis in R and Rstudio is critical due to the ubiquity of these tools in biological research today. I also aim to highlight the benefits and pitfalls of using AI to write code, and the risks of using AI in researching and writing scientific papers, through in-class activities. Through it all, I maintain clear deadlines and standards while also exercising compassion and connecting with students. I aim to be a source of knowledge, while also acknowledging when I don’t immediately know the answer to a question and following up later.
+I enjoy teaching courses that incorporate field observation, data analysis, and writing. Within the realm of teaching, I am interested in helping students develop writing and critical thinking skills through activities that relate to course material. I am also committed to improving scientific literacy by looking at common ways in which graphs and data are misinterpreted in the media and on social media. I will seek to implement evidence-based scientific literacy activities in classes for both majors and non-majors. I strive to maintain clear deadlines and expectations while also exercising compassion and connecting with students. I aim to be a source of knowledge, while also acknowledging when I don’t immediately know the answer to a question and following up later. I am primarily looking to teach courses in ecology, ornithology, or non-majors biology. 
+
+### Coding & data analysis
+
+I will include R-based activities whenever possible for biology majors to help improve their technological literacy. Exposure to data analysis in R and Rstudio is critical due to the ubiquity of these tools in biological research today. I also aim to highlight the benefits and pitfalls of using AI to write code, and the risks of relying on AI when researching and writing scientific papers, through in-class activities. 
+ 
+### Sample R lesson 1
+
+### Sample R lesson 2
+
+
+You can find more of my R lessons on my <a href="https://github.com/smbolinger">github</a>.
