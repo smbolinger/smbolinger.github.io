@@ -24,6 +24,9 @@
 author: 
   # title: "Sarah Bolinger"
   name: "Sarah Bolinger"
+  bio    : >-
+    I am a population ecologist combining field work and simulation modeling.
+#    [(<u>Read more</u>)](/about/)
   links: 
     - label: "GitHub"
       icon: "fab fa-fw fa-github"

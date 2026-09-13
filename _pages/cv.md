@@ -30,4 +30,4 @@ permalink: /cv/
 
 ----
 
-<p style="text-align: center; padding-top: 30px;">>> <a href="{{ site.baseurl }}/assets/documents/bolinger_CV.pdf">Download as PDF</a> </p>
+<p style="text-align: left; padding-left: 50px; padding-top: 30px;">>> <a href="{{ site.baseurl }}/assets/documents/bolinger_CV.pdf">Download as PDF</a> </p>
