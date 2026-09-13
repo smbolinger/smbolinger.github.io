@@ -15,7 +15,8 @@ permalink: /about/
 
 <!-- </div> -->
 {% capture photo_text %}
-I am a population ecologist interested in the underlying assumptions inherent in modeling populations. I am interested in long-term study of avian populations and migratory behavior using technology like nanotags and game cameras.
+I am a population ecologist interested in the underlying assumptions inherent in modeling populations. I am interested in long-term study of avian populations and migratory behavior using technology like transmitter tags and game cameras. I also use simulation modeling to study a variety of topics, including the effects of small amounts of error on our estimates of nest survival and demographic projections.
+I have also been an educator for over a decade. I am passionate about using evidence-based methods to teach scientific literacy and combat the rampant disinformation found on social media and elsewhere. I have spent lots of time considering how best to teach ecological concepts alongside coding in R (and sometimes Python).
 {% endcapture %}
 
 {% include side-image.html url="/assets/images/sarah_CONI.webp" alt="Sarah releases a tagged Common Nighthawk" caption="Releasing a tagged Common Nighthawk" text=photo_text %}
