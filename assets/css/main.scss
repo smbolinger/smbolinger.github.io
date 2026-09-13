@@ -17,12 +17,12 @@ search: false
 // $type-size-8 : 0.625em;  // ~10px
 $type-size-1 : 1.841em;  // ~39.056px
 $type-size-2 : 1.553em;  // ~31.248px
-$type-size-3 : 1.263em;  // ~25.008px
-$type-size-4 : 1.05em;   // ~20px
-$type-size-5 : 0.8em;      // ~16px
-$type-size-6 : 0.72em;   // ~12px
-$type-size-7 : 0.66em; // ~11px
-$type-size-8 : 0.6em;  // ~10px
+$type-size-3 : 1.363em;  // ~25.008px
+$type-size-4 : 1.21em;   // ~20px
+$type-size-5 : 1.08em;      // ~16px
+$type-size-6 : 0.92em;   // ~12px
+$type-size-7 : 0.8em; // ~11px
+$type-size-8 : 0.7em;  // ~10px
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
@@ -67,4 +67,67 @@ html {
 .page-content h3, 
 .post-content h3 {
   padding-left: 40px; /* Adjust the space as needed */
+}
+
+// .sidebar nav.nav__list > .nav__title:first-of-type {
+//   font-size: 1.35rem !important;       
+//   color: #111111 !important;          
+//   font-weight: 800 !important;       
+//   // text-transform: uppercase !important; 
+//   letter-spacing: 1px !important;       
+//
+//   // Custom separation line
+//   border-bottom: 2px solid #cdcdcd !important; 
+//   padding-bottom: 10px !important;
+//   margin-bottom: 15px !important;
+// }
+// .sidebar {
+//   // Increases text size for navigation links and titles
+//   font-size: 1.2rem !important; // Default is roughly 0.75em - 0.85em. Adjust as needed.
+//
+//   // Target the author bio text specifically if needed
+//   .author__bio {
+//     font-size: 1.1rem !important; 
+//   }
+// }
+// .sidebar .nav__items{ /* puts line under navigation */
+.sidebar .author__profile{
+  border-bottom: 1px solid var(--border-color, #f2f3f3);
+  padding-bottom: 15px; /* Spacing between the last nav item and the line */
+  margin-bottom: 15px;  /* Spacing between the line and the social icons */
+}
+.sidebar .author__name {
+  font-size: 1.2rem; /* Change to your preferred size (e.g., rem, px, or em) */
+}
+.author__urls-wrapper {
+  margin-top: 30px; 
+}
+// @media screen and (min-width: 64em) { /* hide masthead except on mobile screens */
+//   .masthead {
+//     display: none !important;
+//   }
+// }
+// .sidebar .nav__list { /* mobile - navigation on masthead & hide sidebar links */
+//   display: none;
+// }
+//
+// @media (min-width: $large) { /* desktop - navigation in sidebar & hide masthead nav links */
+//   .masthead__menu-item {
+//     display: none !important;
+//   }
+//   .sidebar .nav__list {
+//     display: block;
+//   }
+// }
+//
+ /* no default because the nav links don't like the display as block? */
+@media (min-width: $large) { /* desktop - navigation in sidebar & hide masthead nav links */
+  .masthead__menu-item {
+    display: none !important;
+  }
+}
+@media (max-width: ($large - 1px)) {  /* mobile - navigation on masthead & hide sidebar links */
+  .sidebar .nav__list {
+    display: none;
+  }
 }

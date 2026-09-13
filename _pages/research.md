@@ -51,6 +51,12 @@ The Common Nighthawk is a crepuscular aerial insectivore that nests throughout m
 <!-- </p> -->
 
 <div style="display: flex; justify-content: space-between; gap: 20px;">
+  
+  <figure style="flex: 1; margin: 0; text-align: left;">
+    <img src="/assets/images/measuring.webp" alt="Sarah measures the tail of a Common Nighthawk">
+    <figcaption style="font-style: italic;">Measuring a nighthawk tail.</figcaption>
+  </figure>
+
   <figure style="flex: 1.4; margin: 0; text-align: left;">
     <img src="/assets/images/CONI_chicks.webp" alt="Common Nighthawk chicks on the beach">
     <figcaption style="font-style: italic;">Common Nighthawk chicks on the beach.</figcaption>
@@ -60,11 +66,7 @@ The Common Nighthawk is a crepuscular aerial insectivore that nests throughout m
     <img src="/assets/images/CONI_nest_2.webp" alt="A Common Nighthawk nest on the beach">
     <figcaption style="font-style: italic;">A Common Nighthawk nest on the beach.</figcaption>
   </figure>
-  
-  <figure style="flex: 1; margin: 0; text-align: left;">
-    <img src="/assets/images/sarah_CONI.webp" alt="Sarah releases a tagged Common Nighthawk">
-    <figcaption style="font-style: italic;">Releasing a tagged Common Nighthawk.</figcaption>
-  </figure>
+
 </div>
 
 <!-- <div style="display: flex; justify-content: space-between; gap: 20px;"> -->
