@@ -31,12 +31,13 @@ author:
     - label: "Email me"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:yourname@email.com"
+masthead_title: " "
 description: >- # this means to ignore newlines until "baseurl:"
   Ecological modeling, bird banding.
 baseurl: "" # the subpath of your site, e.g. /blog
 include: ["_pages"]
 url: "https://smbolinger.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-repository: "https://github.com/smbolinger"
+# repository: "https://github.com/smbolinger"
 # twitter_username: SarahMBolinger
 # github_username:  smbolinger
 ## Build settings

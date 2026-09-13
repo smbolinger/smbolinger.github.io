@@ -1,8 +1,9 @@
 ---
+title: Teaching philosophy
 permalink: /teaching/
 ---
 
-# Teaching philosophy
+<!-- # Teaching philosophy -->
 
 I work to create courses that incorporate field observation, data analysis, and writing to help students develop critical thinking and communication skills. I am also committed to improving scientific literacy by looking at common ways in which graphs and data are misinterpreted in the media and on social media. I will seek to implement evidence-based scientific literacy activities in classes for both majors and non-majors. I strive to maintain clear deadlines and expectations while also exercising compassion and connecting with students. I aim to be a source of knowledge, while also acknowledging when I don’t immediately know the answer to a question and following up later. I am primarily looking to teach courses in ecology, ornithology, or non-majors biology. 
 
