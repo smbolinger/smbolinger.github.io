@@ -1,6 +1,6 @@
 ---
 title: Teaching philosophy
-permalink: /teaching/
+permalink: /teaching/philosophy/
 ---
 
 <!-- # Teaching philosophy -->
@@ -12,16 +12,4 @@ I work to create courses that incorporate field observation, data analysis, and 
 # Coding & data analysis
 
 I will include R-based activities whenever possible for biology majors to help improve their technological literacy. Exposure to data analysis in R and Rstudio is critical due to the ubiquity of these tools in biological research today. I also aim to highlight the benefits and pitfalls of using AI to write code, and the risks of relying on AI when researching and writing scientific papers, through in-class activities. 
-
-----
-### Sample R lesson 1
-
-----
-### Sample R lesson 2
-
-----
-
-You can find more of my R lessons on my <a href="https://github.com/smbolinger">github</a>.
-
-----
 

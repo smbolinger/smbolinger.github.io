@@ -2,7 +2,9 @@
 <div style="display: flex; gap: 20px;">
   <!-- <div class="side-text"> -->
   <div style="flex: 1.5;">
-    {{ include.text }}
+    <!-- {{ include.text }} -->
+
+    {{ include.text | markdownify }} 
   </div>
   <figure style="flex: 1; margin: 0;">
     <img src="{{ include.url }}" alt="{{ include.alt }}">

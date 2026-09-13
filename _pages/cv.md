@@ -12,16 +12,22 @@ permalink: /cv/
   <!-- <p>Your browser does not support viewing PDFs. Please <a href="{{ site.baseurl }}/assets/documents/bolinger_CV.pdf">download the PDF</a> to view it.</p> -->
 <!--   <p>Your browser does not support viewing PDFs. </p> -->
 <!-- </object> -->
-<object 
-  data="{{ 'https://smbolinger.github.io/assets/documents/bolinger_CV.pdf#toolbar=0&navpanes=0' | relative_url }}" 
-  type="application/pdf" 
-  width="90%" 
-  height="70%">
-  <div style="padding: 20px; border: 1px solid #ccc; text-align: center;">
-    <p>This browser or device does not support inline PDF viewing.</p>
-    <!-- <a href="{{ '/assets/pdfs/your-document.pdf' | relative_url }}" class="btn"> -->
-      <!-- Download and View the PDF -->
-    </a>
-  </div>
+<!-- <div class="pdf-container"> -->
+<object class="pdf-container" data="{{ '/assets/documents/bolinger_CV.pdf#toolbar=0&navpanes=0' | relative_url }}" type="application/pdf" id="cvPDF">
+   <!-- width="95%" -->
+   <!-- height="60%" -->
+   <!-- <div class="pdf-fallback" style="padding: 20px; border: 1px solid #ccc; text-align: left;"> -->
+  <span style="display:none;" onerror="document.getElementById('cvPDF').classList.add('failed');"></span>
+    <script>
+      document.getElementById('cvPDF').className = 'pdf-container.failed';
+    </script>
+  <!-- <div style="padding: 20px; text-align: left;"> -->
+    <!-- <p>This browser or device does not support inline PDF viewing.</p> -->
+    <!-- <a href="{{ '/assets/documents/bolinger_CV.pdf#toolbar=0&navpanes=0' | relative_url }}" class="btn"> Download and View the PDF </a> -->
+  <!-- </div> -->
 </object>
-<p>>> <a href="{{ site.baseurl }}/assets/documents/bolinger_CV.pdf">Download as PDF</a> </p>
+<!-- </div> -->
+
+----
+
+<p style="text-align: center; padding-top: 30px;">>> <a href="{{ site.baseurl }}/assets/documents/bolinger_CV.pdf">Download as PDF</a> </p>
