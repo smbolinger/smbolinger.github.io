@@ -1,0 +1,3 @@
+---
+permalink: /projects/nest-simulation/
+---
