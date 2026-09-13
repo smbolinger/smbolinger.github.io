@@ -18,14 +18,14 @@ main:
         - title: "Other work"
           url: /projects/other/
     - title: "Teaching"
-#      url: /teaching/
-      children:
-        - title: "Teaching philosophy"
-          url: /teaching/philosophy/
-        - title: "Sample R lesson 1"
-          url: /teaching/r-1/
-        - title: "Sample R lesson 2"
-          url: /teaching/r-2/
+      url: /teaching/
+#      children:
+#        - title: "Teaching philosophy"
+#          url: /teaching/philosophy/
+#        - title: "Sample R lesson 1"
+#          url: /teaching/r-1/
+#        - title: "Sample R lesson 2"
+#          url: /teaching/r-2/
     - title: "C.V."
       url: /cv/
 #      - title: "Github"

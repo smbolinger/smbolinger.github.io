@@ -26,7 +26,11 @@ I have also been an educator for over a decade. I am passionate about using evid
 {% include side-image.html url="/assets/images/sarah_CONI.webp" alt="Sarah releases a tagged Common Nighthawk" caption="Releasing a tagged Common Nighthawk" text=photo_text %}
 
 <!-- <p>Email me at <span class="blockspam" aria-hidden="true">PLEASE GO AWAY!</span> <b>sarah.bolinger@<!-- sdfjsdhfkjypcs -->
-<p>Email me at: <!-- fjsdhfkdfsdfjypcs --><b>sarah.bolinger@<!-- fjsdhfkdfsdfjypcs -->gmail.com</b></p>
+<!-- <p>Email me at  -->
+<!-- fjsdhfkdfsdfjypcs -->
+<!-- <b>sarah.bolinger@ -->
+<!-- fjsdhfkdfsdfjypcs -->
+<!-- gmail.com</b></p> -->
 
 <!-- Find out more about [my research interests](https://smbolinger.github.io/research) and [my teaching philosophy](https://smbolinger.github.io/teaching) -->
 
