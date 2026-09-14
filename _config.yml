@@ -35,8 +35,8 @@ author:
 #      icon: "fas fa-fw fa-envelope-square"
 #      url: "mailto:sarah.bolinger@gmail.com"
 masthead_title: " "
-description: >- # this means to ignore newlines until "baseurl:"
-  Ecological modeling, bird banding.
+# description: >- # this means to ignore newlines until "baseurl:"
+  # Ecological modeling, bird banding.
 baseurl: "" # the subpath of your site, e.g. /blog
 include: ["_pages"]
 url: "https://smbolinger.github.io" # the base hostname & protocol for your site, e.g. http://example.com
@@ -66,11 +66,11 @@ url: "https://smbolinger.github.io" # the base hostname & protocol for your site
 remote_theme: "mmistakes/minimal-mistakes@4.28.1"
 # github:
   # repository_url: https://github.com/smbolinger
-# footer:
-#   links:
-#     - label: "GitHub"
-#       icon: "fab fa-fw fa-github"
-#       url: "https://github.com/smbolinger"
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/smbolinger"
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
