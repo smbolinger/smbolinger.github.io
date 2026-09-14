@@ -1,10 +1,17 @@
 ---
-title: Research Interests
 permalink: /research/
 ---
 
 -------
 <!-- <div class="indented-section"> -->
+# Research interests
+
+* Integrated population models 
+* Migratory connectivity in birds
+* Using simulation models to improve observation/study design (virtual ecologist) 
+* Beach-nesting bird ecology 
+
+# Current/past research
 
 ### Coastal bird populations
 
