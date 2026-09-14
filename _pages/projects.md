@@ -1,19 +1,8 @@
 ---
 title: Projects
+layout: collection
 permalink: /projects/
+collection: portfolio
+entries_layout: grid
 ---
-
------
-
-### Missing data analysis
-
------
-
-### Game camera GLM
-
------
-
-### Simulation models
-
------
 

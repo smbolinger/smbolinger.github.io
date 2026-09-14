@@ -1,0 +1,15 @@
+---
+permalink: /
+---
+
+
+{% for page in site.pages %}
+  {% if page.homeex == true %}
+    <p>
+      <h2>{{ page.title }}</h2>
+      {% assign content_parts = page.content | split: '<!--more-->' %}
+      {{ content_parts[0] | markdownify }}
+      <a href="{{ page.url | relative_url }}" class="more-link">(Read more...)</a> 
+    </p>
+  {% endif %}
+{% endfor %}

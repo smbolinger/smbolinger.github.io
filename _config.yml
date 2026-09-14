@@ -64,8 +64,7 @@ url: "https://smbolinger.github.io" # the base hostname & protocol for your site
 # remote_theme: jekyll/minima ## this is the newer version of minima. files from minima 2.5 are in ../old_github.io
 # remote_theme: pages-themes/minimal@v0.2.0 ## this is the newer version of minima. files from minima 2.5 are in ../old_github.io
 remote_theme: "mmistakes/minimal-mistakes@4.28.1"
-# github:
-  # repository_url: https://github.com/smbolinger
+# github: # repository_url: https://github.com/smbolinger
 footer:
   links:
     - label: "GitHub"
@@ -96,11 +95,28 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 #
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:path/
 defaults:
   - scope:
       path: ""
+      type: portfolio
+    values: #      show_excerpts: true
+      layout: "single"
+      sidebar: 
+        nav: "main"
+      classes: wide
+      author_profile: true
+      header:
+        title: ""
+        image: null
+  - scope:
+      path: ""
       type: "posts"
-    values:
+    values: #      show_excerpts: true
+      excerpt_separator: <!--more-->
       layout: "single"
       sidebar: 
         nav: "main"
@@ -112,7 +128,8 @@ defaults:
   - scope:
       path: ""
       type: "pages"
-    values:
+    values: #      show_excerpts: true
+      excerpt_separator: <!--more-->
       layout: "single"
       sidebar: 
         nav: "main"
@@ -122,3 +139,5 @@ defaults:
         title: ""
         image: null
 # navigation:
+jekyll-excerpts:
+  pages: true

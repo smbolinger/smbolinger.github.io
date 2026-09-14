@@ -1,32 +1,15 @@
 main:
 #  title: ""
 # sidebar_list:
-#  - title: "Navigation"
-  # - title: ""
-    # children:
-    - title: "About"
-      url: /about/
-    - title: "Research"
-      url: /research/
-    - title: "Projects"
-#      url: /projects/
-      children:
-        - title: "Nest survival simulation"
-          url: /projects/nest-simulation/
-        - title: "Missing data analysis"
-          url: /projects/missing-data/
-        - title: "Other work"
-          url: /projects/other/
-    - title: "Teaching"
-      url: /teaching/
-#      children:
-#        - title: "Teaching philosophy"
-#          url: /teaching/philosophy/
-#        - title: "Sample R lesson 1"
-#          url: /teaching/r-1/
-#        - title: "Sample R lesson 2"
-#          url: /teaching/r-2/
-    - title: "C.V."
-      url: /cv/
+  - title: "About"
+    url: /about/
+  - title: "Research"
+    url: /research/
+  - title: "Projects"
+    url: /projects/
+  - title: "Teaching"
+    url: /teaching/
+  - title: "C.V."
+    url: /cv/
 #      - title: "Github"
 #        url: https://github.com/smbolinger

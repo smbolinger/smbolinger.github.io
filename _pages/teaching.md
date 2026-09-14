@@ -25,6 +25,7 @@ These are some simple R lessons I used when teaching the Wildlife Ecology and Ma
 
 ## Ornithology 
 
+In ornithology, we had even less time to work on learning R, so these scripts require only small alterations to get running. I do always try to include explanations of the code for students who are interested.
 
 * [Breeding bird survey analysis](https://github.com/smbolinger/r_lab_exercises/blob/main/project1_analysis.Rmd)
 

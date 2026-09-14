@@ -1,10 +1,18 @@
 ---
+title: Research interests
 permalink: /research/
+homeex: true
+excerpt: |
+
+  * Integrated population models 
+  * Migratory connectivity in birds
+  * Using simulation models to improve observation/study design (virtual ecologist) 
+  * Beach-nesting bird ecology 
 ---
 
 -------
 <!-- <div class="indented-section"> -->
-# Research interests
+<!-- # Research interests -->
 
 * Integrated population models 
 * Migratory connectivity in birds
@@ -13,11 +21,13 @@ permalink: /research/
 
 ------
 
-# Current/past research
+## Current/past research
 
 ### Coastal bird populations
 
-Beach-nesting birds are of conservation concern because they must contend with a number of ecological and anthropogenic pressures at their nesting sites, including storms, mammalian predators, and recreational activities that destroy nests or cause abandonment. I have worked with Least Terns, Wilson’s Plovers, and Common Nighthawks on the Louisiana coast. My work included monitoring nests, banding and tracking chicks, and estimating population numbers. I used technology like game cameras and nanotags to improve estimates of nest and individual survival.
+Beach-nesting birds are of conservation concern because they must contend with a number of ecological and anthropogenic pressures at their nesting sites, including storms, mammalian predators, and recreational activities that destroy nests or cause abandonment.
+<!--more-->
+I have worked with Least Terns, Wilson’s Plovers, and Common Nighthawks on the Louisiana coast. My work included monitoring nests, banding and tracking chicks, and estimating population numbers. I used technology like game cameras and nanotags to improve estimates of nest and individual survival.
 <!-- {:.style="padding-left: 20px;"} -->
 <!-- ![A Least Tern chick being weighed]({{ '/assets/images/LETE-scale.webp' | relative_url }}) -->
 <!-- <p align="center"> -->
