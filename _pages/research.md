@@ -11,6 +11,8 @@ permalink: /research/
 * Using simulation models to improve observation/study design (virtual ecologist) 
 * Beach-nesting bird ecology 
 
+------
+
 # Current/past research
 
 ### Coastal bird populations
