@@ -9,7 +9,7 @@ header:
 excerpt: "GLM for examining effects of nest age, date, true fate (determined from cameras), species, and observation interval on ability of observers to a) determine fate in the field (vs. marking unknown) and b) correctly determine fate in field"
 ---
 
-{% if project.github_repo %}
+{% if github_repo %}
   <a href="https://github.com{{ project.github_repo }}" target="_blank">
     View on GitHub
   </a>
