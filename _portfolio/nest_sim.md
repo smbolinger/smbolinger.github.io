@@ -67,7 +67,7 @@ Fates: 0=hatch, 1=depredated, 2=flooded. For each nest:
         >> true final nest fate:  
             [  0  0  1  1  2  0  2  1  2  0  1  2  2  0  0  2  0  1  0  1 ]
 
-<figure style="width: 400px;">
+<figure class="fig-center">
     <img src="/assets/images/init_dates.webp" alt="sampled nest initiation dates for 100 runs of model compared to true initiation dates. the sampled distibutrions follow the true distribution.">
     <figcaption> Sampled nest initiation dates for 100 runs of model (pink) compared to true initiation dates (blue).</figcaption>
 </figure>

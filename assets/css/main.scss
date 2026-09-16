@@ -2,6 +2,11 @@
 search: false
 ---
 
+// $link-color: #007bb5;
+$link-color: #1c98a6;
+// $link-color-hover: #0056b3;
+$link-color-hover: #54e3e3;
+
 @charset "utf-8";
 
 
@@ -32,6 +37,9 @@ $type-size-8 : 0.7em;  // ~10px
 html {
  font-size: 18px;
 }
+body {
+  line-height: 1.2;
+}
 
 /* ------ FIGURE STYLING ------------------------------------------------ */
 
@@ -46,6 +54,17 @@ figcaption {
   background-color: #f5f7fa;
   color: #113c7d;            
   padding: 8px;
+}
+ 
+// img-center {
+.fig-center {
+  display: block !important;
+  // display: table !important;
+  width: 77% !important;
+  max-width: 77% !important;
+  // height: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 /* ------ URL STYLING ------------------------------------------------ */
@@ -109,7 +128,9 @@ figcaption {
 }
 .sidebar .author__name {
   font-size: 1.2rem; /* Change to your preferred size (e.g., rem, px, or em) */
-  color: #1b8894;
+  // color: #1b8894;
+  // color: #6736c9;
+  color: #5628bf;
   // background-color: #a2b6db;
 }
 .sidebar .nav__list {
@@ -118,7 +139,8 @@ figcaption {
   // background-color: #2795a3;
   // background-color: #1b8894;
   // color: #aba8ad;
-  color: #1b8894;
+  // color: #1b8894;
+  color: #5628bf;
   padding: 7px;
   // border: 4px solid #ffffff;
 }
@@ -168,12 +190,6 @@ figcaption {
 
 /* ------ GRID STYLING ------------------------------------------------ */
 
-/* Fix teaser image height/cropping in grid */
-.archive.grid__wrapper .archive__item-teaser {
-  max-height: none; 
-  height: auto;
-}
-
 /* Responsive Grid Wrapper */
 .repo-grid {
   display: grid;
@@ -201,15 +217,20 @@ figcaption {
 
 /* Preview Image Restrictions */
 .tile-image-wrapper {
-  height: 250px;
+  width: 100%;
+  height: 260px;
   overflow: hidden;
-  background-color: #f6f8fa;
+  // background-color: #f6f8fa;
 }
 
 .tile-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: block;
+  // object-fit: cover;
+  object-fit: contain;
+  object-position: bottom;
+  align-self: end;
 }
 
 /* Text and Links Containers */
