@@ -1,5 +1,5 @@
 ---
-title: Nest fate GLM
+title: Nest camera fate GLM
 permalink: /projects/fate_glm/
 github_repo: "smbolinger/fate_glm"
 preview_image: true
