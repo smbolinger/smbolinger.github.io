@@ -8,8 +8,9 @@ home_disp: true
 <!-- ----- -->
 
 <figure style="float: right; max-width: 300px;">
-    <img align="right" style="margin: 15px;" src="/assets/images/sarah_CONI.webp" alt="Sarah releases a tagged Common Nighthawk">
-    <figcaption style="font-style: italic;"> Releasing a tagged Common Nighthawk.</figcaption>
+    <img align="right" src="/assets/images/sarah_CONI.webp" alt="Sarah releases a tagged Common Nighthawk">
+    <figcaption> Releasing a tagged Common Nighthawk.</figcaption>
+    <!-- <figcaption style="font-style: italic;"> Releasing a tagged Common Nighthawk.</figcaption> -->
 </figure>
 
 <p> I am broadly interested in population models and their underlying assumptions. Thus far I have focused on long-term study of avian populations and migratory behavior using a variety of tools, including transmitters, game cameras, and simulation modeling. I am also dedicated to education and mentoring to improve scientific literacy and foster excitement about science. </p>
