@@ -2,7 +2,7 @@
 title: About Me
 permalink: /about/
 excerpt: "I am interested in long-term study of avian populations and migratory behavior using technology like transmitter tags and game cameras. I also use simulation modeling to study a variety of topics, including the effects of small amounts of error on our estimates of nest survival and demographic projections."
-homeex: true
+home_disp: true
 ---
 
 <!-- ----- -->

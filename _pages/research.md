@@ -1,7 +1,7 @@
 ---
 title: Research interests
 permalink: /research/
-homeex: true
+home_disp: true
 excerpt: |
 
   * Integrated population models 

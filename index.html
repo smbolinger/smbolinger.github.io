@@ -4,7 +4,7 @@ permalink: /
 
 
 {% for page in site.pages %}
-  {% if page.homeex == true %}
+  {% if page.home_disp == true %}
     <p>
       <h2>{{ page.title }}</h2>
       {% assign content_parts = page.content | split: '<!--more-->' %}

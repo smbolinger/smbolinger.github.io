@@ -1,7 +1,8 @@
 ---
 title: Projects
 permalink: /projects/
-homeex: true
+home_disp: true
+excerpt: "View projects & github repos"
 ---
 
 <!-- <h2>My Projects</h2> -->
