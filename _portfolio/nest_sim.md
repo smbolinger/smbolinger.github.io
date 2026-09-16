@@ -23,7 +23,7 @@ excerpt: “Virtual ecologist simulation of nest observation process. Used to ex
 
 2. The observer submodel.
 
-    Ability to correctly classify nest fate decreases over time following a simple exponential decay function. Storms increase the rate of evidence decay, making it more likely that observer will have nests with uncertain fate. Observer either marks nest fate "unknown" or "flooded", which means nests are either excluded or some fraction are misclassified because they did not truly flood.
+    Ability to correctly classify nest fate decreases over time following a simple exponential decay function. Storms increase the rate of evidence decay, making it more likely that observer will have nests with uncertain fate. For uncertain-fate nests during storms, observer either marks nest fate "unknown" or "flooded", which means nests are either excluded or some fraction are misclassified because they did not truly flood.
 
 
 <!-- <figure style="width: 700px;"> -->
@@ -101,6 +101,6 @@ Fates: 0=hatch, 1=depredated, 2=flooded 7=unknown. For each nest:
             [ 7  7  1  1  2  0  2  1  2  7  7  2  2  2  7  2  0  1  0  7 ]
 
 
- <a href="https://github.com{{ project.github_repo }}" target="_blank">
-   View on GitHub
+ <a href="https://github.com{{ github_repo }}" target="_blank" rel="noopener" class="btn btn-primary" >
+   View project on GitHub
  </a>
