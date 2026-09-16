@@ -5,7 +5,7 @@ github_repo: "smbolinger/sim_model"
 link_page: true
 preview_image: true
 header:
-  teaser: "assets/images/submodels.webp"
+  teaser: "assets/images/submodels1.webp"
 excerpt: “Virtual ecologist simulation of nest observation process. Used to examine effects of varying proportion of nest fates marked unknown (and excluded from DSR analysis) and proportion of nest fates misclassified.”
 ---
 
