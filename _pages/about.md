@@ -7,7 +7,7 @@ home_disp: true
 
 <!-- ----- -->
 
-<figure style="float: right; max-width: 300px;">
+<figure style="float: right; max-width: 330px;">
     <img align="right" src="/assets/images/sarah_CONI.webp" alt="Sarah releases a tagged Common Nighthawk">
     <figcaption> Releasing a tagged Common Nighthawk.</figcaption>
     <!-- <figcaption style="font-style: italic;"> Releasing a tagged Common Nighthawk.</figcaption> -->
