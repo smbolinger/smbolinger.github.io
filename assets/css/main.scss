@@ -48,11 +48,20 @@ figcaption {
   padding: 8px;
 }
 
-/* ------ MASTHEAD STYLING ------------------------------------------------ */
+/* ------ URL STYLING ------------------------------------------------ */
 
-// Change top header font size
-.masthead__menu-item {
-  font-size: 1.1rem !important; /* Adjust this value as needed (e.g., 14px, 1rem) */
+.padded_link {
+  display: inline-block;
+  // margin-top: 50px; /* doesn't seem to work -wrap in paragraph instead */
+  margin-left: 20px;
+  border: 1px solid #aba8ad;
+  border-radius: 3px;
+  padding: 20px 20px;
+  // background-color: #74e393;
+  // background-color: #66c4b1;
+  background-color: #74e39d;
+  // color: #ffffff;
+  color: #434345;
 }
 
 /* ------ TITLE STYLING ------------------------------------------------ */
@@ -72,16 +81,42 @@ figcaption {
 /* ------ SIDEBAR STYLING ------------------------------------------------ */
 
 .sidebar{
-  padding-right: 25px;
+  // padding-right: 25px;
+  padding: 15px;
+  // background-color: #d5f5dd;
+  // background-color: #76acad;
+  // background-color: #e6f5f4;
+  // border: 2px solid #496cad;
+  // border-right: 15px solid #ffffff;
+  margin-right: 15px;
+  margin-bottom: 0 !important;
+  height: auto !important;
+  border-radius: 3px;
+  // background-color: #a2b6db;
 }
+
 // .sidebar .nav__items{ /* puts line under navigation */
 .sidebar .author__profile{
+  // background-color: #1b8894;
   border-bottom: 1px solid var(--border-color, #f2f3f3);
   padding-bottom: 15px; /* Spacing between the last nav item and the line */
   margin-bottom: 15px;  /* Spacing between the line and the social icons */
+  padding-left: 15px;
 }
 .sidebar .author__name {
   font-size: 1.2rem; /* Change to your preferred size (e.g., rem, px, or em) */
+  color: #1b8894;
+  // background-color: #a2b6db;
+}
+.sidebar .nav__list {
+  border-radius: 3px;
+  // background-color: #a2b6db;
+  // background-color: #2795a3;
+  // background-color: #1b8894;
+  // color: #aba8ad;
+  color: #1b8894;
+  padding: 7px;
+  // border: 4px solid #ffffff;
 }
 .author__urls-wrapper {
   margin-top: 30px; 
@@ -89,10 +124,26 @@ figcaption {
 
 /* ------ NAVIGATION DISPLAY ------------------------------------------------ */
 
+// Change top header font size
+.masthead__menu-item {
+  font-size: 1.1rem !important; /* Adjust this value as needed (e.g., 14px, 1rem) */
+}
+
 @media (min-width: $large) { /* desktop - navigation in sidebar & hide masthead nav links */
+
+  /* make sidebar background stretch to bottom of screen */
+  // #main { /* Make the content wrapper equal height using flexbox */
+  //   display: flex !important;
+  //   align-items: stretch !important;
+  //   min-height: calc(100vh - 150px);
+  // }
   .masthead__menu-item {
     display: none !important;
   }
+  // .sidebar {
+  //   margin-bottom: 0;
+  //   height: 100%;
+  // }
 }
 @media (max-width: ($large - 1px)) {  /* mobile - navigation on masthead & hide sidebar links */
   .sidebar .nav__list {
