@@ -101,8 +101,6 @@ Fates: 0=hatch, 1=depredated, 2=flooded 7=unknown. For each nest:
             [ 7  7  1  1  2  0  2  1  2  7  7  2  2  2  7  2  0  1  0  7 ]
 
 
-{% if github_repo %}
-  <a href="https://github.com{{ project.github_repo }}" target="_blank">
-    View on GitHub
-  </a>
-{% endif %}
+ <a href="https://github.com{{ project.github_repo }}" target="_blank">
+   View on GitHub
+ </a>
