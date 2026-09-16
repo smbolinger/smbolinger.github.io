@@ -13,7 +13,7 @@ home_disp: true
     <!-- <figcaption style="font-style: italic;"> Releasing a tagged Common Nighthawk.</figcaption> -->
 </figure>
 
-<p> I am broadly interested in population models and their underlying assumptions. Thus far I have focused on long-term study of avian populations and migratory behavior using a variety of tools, including transmitters, game cameras, and simulation modeling. I am also dedicated to education and mentoring to improve scientific literacy and foster excitement about science. </p>
+<p> I am broadly interested in population models and their underlying assumptions. Thus far I have focused on long-term study of avian populations and migratory behavior using a variety of tools, including transmitters, game cameras, and simulation modeling. I have banded Passerines, terns, shorebirds, and nightjars with multiple different monitoring projects. I am also dedicated to education and mentoring to improve scientific literacy and foster excitement about science. </p>
 <!--more-->
 
 <p> I use simulation modeling to study a variety of topics, including the effects of small amounts of error on our estimates of nest survival and demographic projections. I have extensive experience tracking and handling birds, including banding, tagging, and taking blood samples, but I am interested in working with other taxa as well. </p>
