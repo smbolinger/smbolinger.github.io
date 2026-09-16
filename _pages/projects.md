@@ -21,6 +21,9 @@ excerpt: "View projects & github repos"
 <!--   {% endfor %} -->
 <!-- </ul> -->
 
+View projects & github repos
+<!--more-->
+
 <div class="repo-grid">
   {% for project in site.portfolio %}
     <div class="repo-tile">
