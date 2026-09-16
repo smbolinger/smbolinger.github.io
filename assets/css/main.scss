@@ -33,10 +33,29 @@ html {
  font-size: 18px;
 }
 
+/* ------ FIGURE STYLING ------------------------------------------------ */
+
+/* affects figure container, which includes img & caption */
+figure {
+  margin: 25px;
+}
+
+figcaption {
+  margin: 10px; /*additional margin for caption */
+  font-style: italic;
+  background-color: #f5f7fa;
+  color: #113c7d;            
+  padding: 8px;
+}
+
+/* ------ MASTHEAD STYLING ------------------------------------------------ */
+
 // Change top header font size
 .masthead__menu-item {
   font-size: 1.1rem !important; /* Adjust this value as needed (e.g., 14px, 1rem) */
 }
+
+/* ------ TITLE STYLING ------------------------------------------------ */
 
 .page__title {
   font-size: 1.2rem; // Mobile size default
@@ -46,50 +65,12 @@ html {
   }
 }
 
-// Change Sidebar Navigation Font Size
-// .nav__list {
-//  font-size: 0.85rem !important; /* Adjust this value as needed */
-// }
 .site-title {
   font-size: 1.2rem; // Adjust this value to your preferred size
 }
-.indented-section {
-  margin-left: 2rem; /* Adjust the spacing as needed */
-}
 
-.indented-section h1,
-.indented-section h2,
-.indented-section h3,
-.indented-section p {
-  margin-left: 1rem; /* Keeps internal element spacing clean */
-}
+/* ------ SIDEBAR STYLING ------------------------------------------------ */
 
-.page-content h3, 
-.post-content h3 {
-  padding-left: 40px; /* Adjust the space as needed */
-}
-
-// .sidebar nav.nav__list > .nav__title:first-of-type {
-//   font-size: 1.35rem !important;       
-//   color: #111111 !important;          
-//   font-weight: 800 !important;       
-//   // text-transform: uppercase !important; 
-//   letter-spacing: 1px !important;       
-//
-//   // Custom separation line
-//   border-bottom: 2px solid #cdcdcd !important; 
-//   padding-bottom: 10px !important;
-//   margin-bottom: 15px !important;
-// }
-// .sidebar {
-//   // Increases text size for navigation links and titles
-//   font-size: 1.2rem !important; // Default is roughly 0.75em - 0.85em. Adjust as needed.
-//
-//   // Target the author bio text specifically if needed
-//   .author__bio {
-//     font-size: 1.1rem !important; 
-//   }
-// }
 .sidebar{
   padding-right: 25px;
 }
@@ -105,25 +86,9 @@ html {
 .author__urls-wrapper {
   margin-top: 30px; 
 }
-// @media screen and (min-width: 64em) { /* hide masthead except on mobile screens */
-//   .masthead {
-//     display: none !important;
-//   }
-// }
-// .sidebar .nav__list { /* mobile - navigation on masthead & hide sidebar links */
-//   display: none;
-// }
-//
-// @media (min-width: $large) { /* desktop - navigation in sidebar & hide masthead nav links */
-//   .masthead__menu-item {
-//     display: none !important;
-//   }
-//   .sidebar .nav__list {
-//     display: block;
-//   }
-// }
-//
- /* no default because the nav links don't like the display as block? */
+
+/* ------ NAVIGATION DISPLAY ------------------------------------------------ */
+
 @media (min-width: $large) { /* desktop - navigation in sidebar & hide masthead nav links */
   .masthead__menu-item {
     display: none !important;
@@ -134,11 +99,9 @@ html {
     display: none;
   }
 }
-// object[type="application/pdf"] {
-//     width: 100%;
-//     height: 80vh; /* Takes up 80% of the screen height */
-//     // min-height: 600px;
-// }
+
+/* ------ PDF EMBED STYLING ------------------------------------------------ */
+
 .pdf-container {
   height: 80%;
   width: 95%;
@@ -147,53 +110,15 @@ html {
   height: 0px;
   display: none;
 }
-span.blockspam {
-  display: none;
-}
 
-// .archive.grid__wrapper .grid__item {
-//   @include breakpoint($medium) {
-//     width: 50%; /* 2 items per row instead of default 4/3 */
-//   }
-//   @include breakpoint($large) {
-//     width: 50%;
-//   }
-// }
+/* ------ GRID STYLING ------------------------------------------------ */
+
 /* Fix teaser image height/cropping in grid */
 .archive.grid__wrapper .archive__item-teaser {
   max-height: none; 
   height: auto;
 }
 
-.archive.grid__wrapper .archive__item-teaser img {
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: cover;
-}
-.archive.grid__wrapper {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: space-between !important;
-
-  .grid__item {
-    clear: none !important;
-    margin-right: 0 !important;
-    margin-left: 0 !important;
-
-    /* Mobile: 1 item per row */
-    width: 100% !important; 
-
-    /* Tablets and Desktop: 2 items per row (approx 48% width + space) */
-    @include breakpoint($small) {
-      width: 48% !important;
-    }
-    
-    @include breakpoint($medium) {
-      width: 48% !important;
-    }
-  }
-}
 /* Responsive Grid Wrapper */
 .repo-grid {
   display: grid;
@@ -202,7 +127,7 @@ span.blockspam {
   padding: 20px 0;
 }
 
-/* Individual Tile Item */
+/* Individual tile item */
 .repo-tile {
   border: 1px solid #e1e4e8;
   border-radius: 6px;
@@ -257,7 +182,8 @@ span.blockspam {
   gap: 10px;
 }
 
-/* Simple Button Styling */
+/* ------ BUTTON STYLING ------------------------------------------------ */
+
 .btn {
   padding: 6px 12px;
   font-size: 0.85rem;
@@ -270,4 +196,26 @@ span.blockspam {
 .btn-primary:hover { background: #000; }
 .btn-secondary { background: #fafbfc; color: #24292e; border: 1px solid #e1e4e8; }
 .btn-secondary:hover { background: #f3f4f6; }
+
+/* ------ OTHER STYLING ------------------------------------------------ */
+
+span.blockspam {
+  display: none;
+}
+
+.indented-section {
+  margin-left: 2rem; /* Adjust the spacing as needed */
+}
+
+.indented-section h1,
+.indented-section h2,
+.indented-section h3,
+.indented-section p {
+  margin-left: 1rem; /* Keeps internal element spacing clean */
+}
+
+.page-content h3, 
+.post-content h3 {
+  padding-left: 40px; /* Adjust the space as needed */
+}
 
