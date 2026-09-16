@@ -49,7 +49,7 @@ Sample simulation with only 15 nests (true simulation had 250 or 500).
 
 ### Nest creation submodel:
 
-For each nest:
+Fates: 0=hatch, 1=depredated, 2=flooded. For each nest:
 
         >> init dates:         
             [ 25  8 47 32 43 32 61 73 43 30 26 46 43 58 11 52 11 36 27 20 ]
@@ -74,7 +74,7 @@ For each nest:
 
 ### Observer submodel:
 
-For each nest:
+Fates: 0=hatch, 1=depredated, 2=flooded 7=unknown. For each nest:
 
         >> surveys til discovery:
             [ 0  0  0  3  0  0  0  1  1  0  0  0  0  1  0  2  0  2  0  0 ]
