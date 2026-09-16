@@ -101,6 +101,8 @@ Fates: 0=hatch, 1=depredated, 2=flooded 7=unknown. For each nest:
             [ 7  7  1  1  2  0  2  1  2  7  7  2  2  2  7  2  0  1  0  7 ]
 
 
- <a href="https://github.com{{ github_repo }}" target="_blank" rel="noopener" class="btn btn-primary" >
-   View project on GitHub
- </a>
+<p style="margin-top: 50px;">
+  <a href="https://github.com{{ page.github_repo }}" target="_blank" rel="noopener" class="padded_link" >
+    View project on GitHub
+  </a>
+</p>
