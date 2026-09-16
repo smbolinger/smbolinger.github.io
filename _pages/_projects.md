@@ -1,10 +1,13 @@
 ---
 title: Projects
+layout: collection
 permalink: /projects/
+collection: portfolio
 homeex: true
+entries_layout: grid
 ---
 
-<!-- <h2>My Projects</h2> -->
+<h2>My Projects</h2>
 <ul>
   {% for project in site.portfolio %}
     <li>
