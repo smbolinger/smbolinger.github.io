@@ -150,3 +150,124 @@ html {
 span.blockspam {
   display: none;
 }
+
+// .archive.grid__wrapper .grid__item {
+//   @include breakpoint($medium) {
+//     width: 50%; /* 2 items per row instead of default 4/3 */
+//   }
+//   @include breakpoint($large) {
+//     width: 50%;
+//   }
+// }
+/* Fix teaser image height/cropping in grid */
+.archive.grid__wrapper .archive__item-teaser {
+  max-height: none; 
+  height: auto;
+}
+
+.archive.grid__wrapper .archive__item-teaser img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+.archive.grid__wrapper {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-between !important;
+
+  .grid__item {
+    clear: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+    /* Mobile: 1 item per row */
+    width: 100% !important; 
+
+    /* Tablets and Desktop: 2 items per row (approx 48% width + space) */
+    @include breakpoint($small) {
+      width: 48% !important;
+    }
+    
+    @include breakpoint($medium) {
+      width: 48% !important;
+    }
+  }
+}
+/* Responsive Grid Wrapper */
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Individual Tile Item */
+.repo-tile {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.repo-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Preview Image Restrictions */
+.tile-image-wrapper {
+  height: 220px;
+  overflow: hidden;
+  background-color: #f6f8fa;
+}
+
+.tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text and Links Containers */
+.tile-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tile-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+}
+
+.tile-description {
+  font-size: 0.9rem;
+  color: #586069;
+  flex-grow: 1;
+  margin: 0 0 15px 0;
+}
+
+.tile-links {
+  display: flex;
+  gap: 10px;
+}
+
+/* Simple Button Styling */
+.btn {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+  flex: 1;
+}
+.btn-primary { background: #24292e; color: #fff; }
+.btn-primary:hover { background: #000; }
+.btn-secondary { background: #fafbfc; color: #24292e; border: 1px solid #e1e4e8; }
+.btn-secondary:hover { background: #f3f4f6; }
+
