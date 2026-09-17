@@ -6,7 +6,7 @@ preview_image: true
 link_page: false
 header:
   teaser: "assets/images/424.webp"
-excerpt: "GLM for examining effects of nest age, date, true fate (determined from cameras), species, and observation interval on ability of observers to a) determine fate in the field (vs. marking unknown) and b) correctly determine fate in field"
+excerpt: "GLM for examining effects of nest age, date, true fate (determined from cameras), species, and observation interval on ability of observers to a) determine fate in the field (vs. marking unknown) and b) correctly determine fate in field."
 ---
 
 <p style="margin-top: 50px;">
