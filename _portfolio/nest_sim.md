@@ -146,8 +146,8 @@ Sample simulation with only 20 nests (true simulation had 250 or 500).
 
 <!-- <figure style="width: 80%; margin: 0;"> -->
 <figure class="fig-center">
-    <img src="/assets/images/prop_plot3.webp" alt="Plot showing that proportion of nests flooded, hatched, and discovered follow the same patterns as parameter values change, regardless of which choice observer makes. Proportion of nests misclassified and marked unknown, however, follow different patterns depending on observer choice (as expected).">
-    <figcaption> Proportion of nests flooded, hatched, and discovered follow the same patterns as parameter values change, regardless of which choice observer makes. Proportion of nests misclassified and marked unknown, however, follow different patterns depending on observer choice (as expected).</figcaption>
+    <img src="/assets/images/prop_plot3.webp" alt="Plot showing that proportion of nests flooded, hatched, and discovered follow the same trends as parameter values change, regardless of which choice observer makes. Proportion of nests misclassified and marked unknown, however, follow different trends depending on observer choice (as expected).">
+    <figcaption> Proportion of nests flooded, hatched, and discovered follow the same trends as parameter values change, regardless of which choice observer makes. Proportion of nests misclassified and marked unknown, however, follow different trends depending on observer choice (as expected).</figcaption>
 </figure>
 
 
