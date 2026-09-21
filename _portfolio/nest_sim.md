@@ -144,7 +144,7 @@ Sample simulation with only 20 nests (true simulation had 250 or 500).
 
 <figure class="fig-center">
     <img src="/assets/images/dsr_plot.webp" alt="Plot showing the true DSR and estimated DSR from logistic exposure model with different covariates over the course of the season">
-    <figcaption>True DSR value, and estimates from logistic exposure model with different covariates, over the course of the season.</figcaption>
+    <figcaption>True DSR value, and estimates from logistic exposure model with different covariates, at different levels of observation interval and storm activity over the course of the season.</figcaption>
 </figure>
 
 
