@@ -36,9 +36,9 @@ I used synthetic data to assess the impact of increasing numbers of uncertain-fa
 
     For uncertain-fate nests during storms, observer has a choice: 
 
-    * <span style="color: #7A67EE; font-weight: bold;">Observer 1</span> marks these nest fates "unknown" 
+    * <span style="color: #40E0D0; font-weight: bold;">Observer 1</span> marks these nest fates "flooded"
 
-    * <span style="color: #40E0D0; font-weight: bold;">Observer 2</span> marks these nest fates "flooded"
+    * <span style="color: #7A67EE; font-weight: bold;">Observer 2</span> marks these nest fates "unknown" 
 
     This means some fraction of nests are either excluded because fate is unknown, or are misclassified because they did not truly flood.
 
