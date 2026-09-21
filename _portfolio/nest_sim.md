@@ -64,10 +64,9 @@ Sample simulation with only 20 nests (true simulation had 250 or 500).
 
 
         >> storm days =  59 63
-        >> survey days, w/o storms:
-            [1 8 15 22 29 36 43 50 57 66 73 80 87 94 101 108 115]
-        >> survey intervals:      
-            [0 7  7  7  7  7  7  7  7  9  7  7  7  7   7   7   7] ; sum(surveyInts>obsFreq)=1
+        >> survey days, w/o storms: [1 8 15 22 29 36 43 50 57 66 73 80 87 94 101 108 115]
+        >> survey intervals:        [0 7  7  7  7  7  7  7  7  9  7  7  7  7   7   7   7] ;
+            sum(surveyInts>obsFreq)=1
 
     After creating the storms and survey days, run the nest creation & observer submodels. Values for each of the 20 nests are printed. The nests are numbered 0-19 because Python indexes from 0 (unlike R).
 
@@ -77,25 +76,19 @@ Sample simulation with only 20 nests (true simulation had 250 or 500).
 
     Sample the initiation dates and survival times:
 
-        >> init dates:         
-            [ 25  8 47 32 43 32 61 73 43 30 26 46 43 58 11 52 11 36 27 20 ]
-        >> survival in days:   
-            [ 20 20  3 14 20 20 20 16 20 20  7 20 20 20 20 20 20 14 20 13 ]
+        >> init dates:           [ 25  8 47 32 43 32 61 73 43 30 26 46 43 58 11 52 11 36 27 20 ]
+        >> survival (days):      [ 20 20  3 14 20 20 20 16 20 20  7 20 20 20 20 20 20 14 20 13 ]
 
     Determine which storms happened while nest was active, and whether nest flooded (here, only nest 12 was active during a storm and did NOT flood). After determining storm activity during the nest period, get the true end date for each nest, including storms:
 
-        >> which storm?             
-            [  0  0  0  0 59  0 63  0 59  0  0 59 59 59  0 59  0  0  0  0 ]
-        >> flooded?      
-            [  0  0  0  0  1  0  1  0  1  0  0  1  1  0  0  1  0  0  0  0 ] 
+        >> which storm?          [  0  0  0  0 59  0 63  0 59  0  0 59 59 59  0 59  0  0  0  0 ]
+        >> flooded?              [  0  0  0  0  1  0  1  0  1  0  0  1  1  0  0  1  0  0  0  0 ] 
 
-        >> end dates (w/storms):   
-            [ 45 28 50 46 59 52 63 89 59 50 33 59 59 78 31 59 31 50 47 33 ]
+        >> end dates (w/storms): [ 45 28 50 46 59 52 63 89 59 50 33 59 59 78 31 59 31 50 47 33 ]
 
     True fates (0=hatch, 1=depredated, 2=flooded):
 
-        >> true final nest fate:  
-            [  0  0  1  1  2  0  2  1  2  0  1  2  2  0  0  2  0  1  0  1 ]
+        >> true final nest fate: [  0  0  1  1  2  0  2  1  2  0  1  2  2  0  0  2  0  1  0  1 ]
 
     Plots:
     <div style="display: flex; gap: 25px; margin-top: 5px;">
@@ -114,35 +107,28 @@ Sample simulation with only 20 nests (true simulation had 250 or 500).
 
     For each nest, determine how long until discovery and how many surveys happened while nest was active:
 
-        >> surveys til discovery:
-            [ 0  0  0  3  0  0  0  1  1  0  0  0  0  1  0  2  0  2  0  0 ]
-        >> total num surveys: 
-            [ 3  3  0  2  3  3  0  3  3  2  1  2  3  0  3  1  3  2  3  2 ]
-
-        > nest discovered? (svysTilDiscovery < num_svy):
-            [ 1  1  0  0  1  1  0  1  1  1  1  1  1  0  1  0  1  0  1  1 ]
+        >> surveys til discovery:   [ 0  0  0  3  0  0  0  1  1  0  0  0  0  1  0  2  0  2  0  0 ]
+        >> total num surveys:       [ 3  3  0  2  3  3  0  3  3  2  1  2  3  0  3  1  3  2  3  2 ]
+        >> discovered?
+        (svysTilDiscovery<num_svy): [ 1  1  0  0  1  1  0  1  1  1  1  1  1  0  1  0  1  0  1  1 ]
 
     For discovered nests, determine the date when the nest was...
 
-        >> first found: 
-            [ 29  8  0  0 43  36 0 80 50 36 29 50 43  0 15  0 15  0 29 22]
-        >> last active:
-            [ 50 29  0  0 57  57 0 87 57 50 29 57 57  0 36  0 36  0 50 29]
-        >> last checked:
-            [ 50 29  0  0 66  57 0 94 66 50 36 66 66  0 36  0 36  0 50 36]
+        >> first found:             [ 29  8  0  0 43  36 0 80 50 36 29 50 43  0 15  0 15  0 29 22]
+        >> last active:             [ 50 29  0  0 57  57 0 87 57 50 29 57 57  0 36  0 36  0 50 29]
+        >> last checked:            [ 50 29  0  0 66  57 0 94 66 50 36 66 66  0 36  0 36  0 50 36]
+
+    Assigned fate for each nest (0=hatch, 1=depredated, 2=flooded, 7=unknown):
+
+        >> assigned fate:            [ 7  7  1  1  2  0  2  1  2  7  7  2  2  2  7  2  0  1  0  7 ]
 
     Which nests (by nest ID number) had...
 
-        >> correct assigned fate (np.where(fateProb<fateCuesPresent)):
+        >> correct assigned fate (np.where(fateProb<fateCuesPresent)): 
             [ 2  3  4  5  7 11 15 16 17 18 ]
 
         >> storm during final interval (np.where(stormFinalInt)):    
             [ 4  6  8  11  12  13  15 ]
-
-    Assigned fate for each nest (0=hatch, 1=depredated, 2=flooded, 7=unknown):
-
-        >> assigned fate:     
-            [ 7  7  1  1  2  0  2  1  2  7  7  2  2  2  7  2  0  1  0  7 ]
 
 <!-- <figure style="width: 80%; margin: 0;"> -->
 <figure class="fig-center">
