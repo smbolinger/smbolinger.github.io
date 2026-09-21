@@ -131,9 +131,20 @@ Sample simulation with only 20 nests (true simulation had 250 or 500).
             [ 4  6  8  11  12  13  15 ]
 
 <!-- <figure style="width: 80%; margin: 0;"> -->
+### Some output:
 <figure class="fig-center">
     <img src="/assets/images/prop_plot3.webp" alt="Plot showing that proportion of nests flooded, hatched, and discovered follow the same trends as parameter values change, regardless of which choice observer makes. Proportion of nests misclassified and marked unknown, however, follow different trends depending on observer choice (as expected).">
     <figcaption> Proportion of nests flooded, hatched, and discovered follow the same trends as parameter values change, regardless of which choice observer makes. Proportion of nests misclassified and marked unknown, however, follow different trends depending on observer choice (as expected).</figcaption>
+</figure>
+
+<!-- <figure class="fig-center"> -->
+<!--     <img src="/assets/images/sf_plot.webp" alt="Plot showing how PSR bias changes with increasing storm activity, for Observer 1 and Observer 2"> -->
+<!--     <figcaption></figcaption> -->
+<!-- </figure> -->
+
+<figure class="fig-center">
+    <img src="/assets/images/dsr_plot.webp" alt="Plot showing the true DSR and estimated DSR from logistic exposure model with different covariates over the course of the season">
+    <figcaption>True DSR value, and estimates from logistic exposure model with different covariates, over the course of the season.</figcaption>
 </figure>
 
 
