@@ -98,7 +98,7 @@ Sample simulation with only 20 nests (true simulation had 250 or 500).
             [  0  0  1  1  2  0  2  1  2  0  1  2  2  0  0  2  0  1  0  1 ]
 
     Plots:
-    <div style="display: flex; gap: 15px; margin-top: 5px;">
+    <div style="display: flex; gap: 25px; margin-top: 5px;">
         <figure style="flex: 1; margin: 0; vertical-align: bottom;">
             <img src="/assets/images/storm_dates.webp" alt="sampled storm dates for 100 runs of model compared to true storm dates. the sampled distibutrions follow the true distribution.">
             <figcaption> Randomly chosen storm dates from 100 separate runs of model (blue) compared to true storm date distribution for the Atlantic (gray).</figcaption>

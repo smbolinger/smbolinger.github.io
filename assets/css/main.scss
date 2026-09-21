@@ -49,12 +49,12 @@ figure {
 }
 
 figcaption {
-  margin: 3px; /*additional margin for caption */
   font-style: italic;
-  font-size: 11px;
+  font-size: 0.85rem !important;
+  margin: 5px !important; /*additional margin for caption */
   background-color: #f5f7fa;
   color: #113c7d;            
-  padding: 8px;
+  padding: 8px !important;
 }
  
 // img-center {
