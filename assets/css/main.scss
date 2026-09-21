@@ -274,6 +274,18 @@ figcaption {
 .btn-secondary { background: #fafbfc; color: #24292e; border: 1px solid #e1e4e8; }
 .btn-secondary:hover { background: #f3f4f6; }
 
+/* ------ CODE BLOCKS -------------------------------------------------- */
+.highlight {
+  margin: 0;
+  padding: 0.5em;
+  font-family: $monospace;
+  // font-size: $type-size-5b;
+  background-color: #d7dce0;
+  color: #02121f;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
 /* ------ OTHER STYLING ------------------------------------------------ */
 
 span.blockspam {
