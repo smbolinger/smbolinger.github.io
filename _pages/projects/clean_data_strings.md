@@ -34,8 +34,6 @@ library(dplyr)
 library(readr)
 library(stringr)
 
-options(width=120, rlib_name_repair_verbosity = "quiet")
-
 # give all files created from this document a shared suffix that is unique to the specific run
 now = format(Sys.time(), "%m%d_%H%M_")
 
@@ -51,7 +49,7 @@ init <- function(date, species) {
   return(date-inc) 
 }
 
-if(file.exists("output")==FALSE) dir.create("output")  ## create the output directory (if doesn't exist)
+if (file.exists("output")==FALSE) dir.create("output")  ## create the output directory (if doesn't exist)
 ```
 
 ------------------------------------------------------------------------
@@ -60,11 +58,10 @@ if(file.exists("output")==FALSE) dir.create("output")  ## create the output dire
 
 Load the data from one or more years and concatenate into a single
 dataframe. I added year as an additional column to sort by/use as a
-covariate.
+covariate, and added a year prefix to nest numbers.
 
-Although one could simply sort by year to deal with duplicate nest
-numbers, I added a prefix to nest ID for each year to differentiate
-them.
+Then, check the column names (here, I am printing them as “index: name”)
+to see if any columns need to be removed.
 
 ``` r
 fnames <- list(
@@ -83,24 +80,20 @@ ndList <- lapply(seq_along(fnames), function(x) {
   ndata <- ndata[,colSums(!is.na(ndata))>0] ## remove empty columns
   return(ndata)
   })
-names(ndList)<- names(fnames)
 
+names(ndList)<- names(fnames)
 allData <- as.data.frame(data.table::rbindlist(ndList, fill=TRUE))
 ```
-
-### Check the column names (here, I am printing them as “index: name”):
-
-See if any columns need to be removed.
 
 <pre style="margin: 10;"><code class=' text-cat '> [1] 1: nest        2: site        3: species     4: lat         5: lon         6: prot        7: estHD      
  [8] 8: pic         9: cov_1m      10: cov_5m     11: ad_band    12: pred_type  13: i          14: j         
 [15] 15: k          16: duration   17: final_obs  18: NOTES      19: camera     20: field_fate 21: cam_fate  
 [22] 22: final_fate 23: fate_date  24: cam_notes  25: new_notes  26: 26-Apr     27: 29-Apr     28: 3-May     
-[29] 29: 5-May      30: 6-May      31: 8-May      32: 9-May      33: 11-May     34: 12-May     35: 13-May    
-[36] 36: 14-May     37: 15-May     38: 17-May     39: 19-May     40: 20-May     41: 23-May     42: 24-May    
-[43] 43: 28-May     44: 29-May     45: year       46: j_cam      47: cam_diff   48: phot_loc   49: 18-May    
-[50] 50: 25-May     51: 27-May     52: 1-Jun      53: ch_band    54: k_cam      55: found      56: issue     
-[57] 57: 30-Apr     58: 4-May      59: 16-May     60: 26-May    
+[29] 29: 5-May      30: 6-May      31: 8-May      32: 9-May      33: 11-May     34: 12-May     35: 14-May    
+[36] 36: 15-May     37: 17-May     38: 19-May     39: 20-May     40: 23-May     41: 24-May     42: 28-May    
+[43] 43: year       44: j_cam      45: cam_diff   46: phot_loc   47: 13-May     48: 18-May     49: 25-May    
+[50] 50: 27-May     51: 1-Jun      52: ch_band    53: k_cam      54: found      55: issue      56: 30-Apr    
+[57] 57: 4-May      58: 26-May    
 </code></pre>
 
 Also extract any “notes” columns to file so you can check them later if
@@ -138,10 +131,11 @@ If the printed names are correct, go ahead and remove the columns. Also,
 move some of the information (non-date) columns to join the others.
 
 ``` r
-nestdata <- subset(allData,select=-cols)            # remove extraneous columns
-
 mvNames <- c("year", "j_cam", "k_cam") # columns to move to beginning
-nestdata <- nestdata |>
+
+nestdata <- subset(allData,select=-cols)            # remove extraneous columns
+nestdata <- allData |>
+  select(-all_of(cols)) |>            # remove extraneous columns
   relocate(all_of(mvNames), .after=k)         
 
 print(names(nestdata))                               # check column names again!
@@ -151,9 +145,8 @@ print(names(nestdata))                               # check column names again!
  [9] "cov_5m"     "pred_type"  "i"          "j"          "k"          "year"       "j_cam"      "k_cam"     
 [17] "duration"   "final_obs"  "camera"     "field_fate" "cam_fate"   "final_fate" "fate_date"  "26-Apr"    
 [25] "29-Apr"     "3-May"      "5-May"      "6-May"      "8-May"      "9-May"      "11-May"     "12-May"    
-[33] "13-May"     "14-May"     "15-May"     "17-May"     "19-May"     "20-May"     "23-May"     "24-May"    
-[41] "28-May"     "29-May"     "18-May"     "25-May"     "27-May"     "1-Jun"      "30-Apr"     "4-May"     
-[49] "16-May"     "26-May"    
+[33] "14-May"     "15-May"     "17-May"     "19-May"     "20-May"     "23-May"     "24-May"     "28-May"    
+[41] "13-May"     "18-May"     "25-May"     "27-May"     "1-Jun"      "30-Apr"     "4-May"      "26-May"    
 </code></pre>
 
 ### Format the columns
@@ -173,9 +166,8 @@ easier for R to interpret (numeric column names can cause issues).
 ``` r
 colNames <- names(nestdata)
 
-dateIndex <- which(str_detect(
-  colNames,
-  '[0-9]{1,2}-[:LETTER:]{3}|[0-9]{1,2}-[:LETTER:]{3}-[0-9]{2}')  ) ## target dates with & without year
+dateIndex <- which( str_detect(colNames, '[0-9]{1,2}-[:LETTER:]{3}') ) ## observation columns - no year 
+#dateIndex <- which( str_detect(colNames, '[0-9]{1,2}-[:LETTER:]{3}-[0-9]{2}') ) ## includes year
 infoIndex <- seq(1,ncol(nestdata))[-dateIndex]  ## non-observation columns (info columns)
 
 dates     <- names(nestdata)[dateIndex] # select names of observation columns 
@@ -183,17 +175,14 @@ julDates  <- sday(dates)                # convert the names to season-days
 names(julDates)  <- dates               # also creates index of date:season-day 
 
 newNames         <- c(names(nestdata)[infoIndex],paste0("d.", julDates))
-
-print(newNames)
 ```
 
 <pre style="margin: 10;"><code class=' text-cat '> [1] "nest"       "site"       "species"    "lat"        "lon"        "prot"       "estHD"      "cov_1m"    
  [9] "cov_5m"     "pred_type"  "i"          "j"          "k"          "year"       "j_cam"      "k_cam"     
 [17] "duration"   "final_obs"  "camera"     "field_fate" "cam_fate"   "final_fate" "fate_date"  "d.26"      
 [25] "d.29"       "d.33"       "d.35"       "d.36"       "d.38"       "d.39"       "d.41"       "d.42"      
-[33] "d.43"       "d.44"       "d.45"       "d.47"       "d.49"       "d.50"       "d.53"       "d.54"      
-[41] "d.58"       "d.59"       "d.48"       "d.55"       "d.57"       "d.62"       "d.30"       "d.34"      
-[49] "d.46"       "d.56"      
+[33] "d.44"       "d.45"       "d.47"       "d.49"       "d.50"       "d.53"       "d.54"       "d.58"      
+[41] "d.43"       "d.48"       "d.55"       "d.57"       "d.62"       "d.30"       "d.34"       "d.56"      
 </code></pre>
 
 If the new column names look correct, apply them here. Then, reorder the
@@ -213,9 +202,8 @@ nestdata <- nestdata[,colOrder]
  [9] "cov_5m"     "pred_type"  "i"          "j"          "k"          "year"       "j_cam"      "k_cam"     
 [17] "duration"   "final_obs"  "camera"     "field_fate" "cam_fate"   "final_fate" "fate_date"  "d.26"      
 [25] "d.29"       "d.30"       "d.33"       "d.34"       "d.35"       "d.36"       "d.38"       "d.39"      
-[33] "d.41"       "d.42"       "d.43"       "d.44"       "d.45"       "d.46"       "d.47"       "d.48"      
-[41] "d.49"       "d.50"       "d.53"       "d.54"       "d.55"       "d.56"       "d.57"       "d.58"      
-[49] "d.59"       "d.62"      
+[33] "d.41"       "d.42"       "d.43"       "d.44"       "d.45"       "d.47"       "d.48"       "d.49"      
+[41] "d.50"       "d.53"       "d.54"       "d.55"       "d.56"       "d.57"       "d.58"       "d.62"      
 </code></pre>
 
 <span class="text-cat">\>\> should match rearranged columns:</span>
@@ -223,9 +211,8 @@ nestdata <- nestdata[,colOrder]
  [9] "cov_5m"     "pred_type"  "i"          "j"          "k"          "year"       "j_cam"      "k_cam"     
 [17] "duration"   "final_obs"  "camera"     "field_fate" "cam_fate"   "final_fate" "fate_date"  "d.26"      
 [25] "d.29"       "d.30"       "d.33"       "d.34"       "d.35"       "d.36"       "d.38"       "d.39"      
-[33] "d.41"       "d.42"       "d.43"       "d.44"       "d.45"       "d.46"       "d.47"       "d.48"      
-[41] "d.49"       "d.50"       "d.53"       "d.54"       "d.55"       "d.56"       "d.57"       "d.58"      
-[49] "d.59"       "d.62"      
+[33] "d.41"       "d.42"       "d.43"       "d.44"       "d.45"       "d.47"       "d.48"       "d.49"      
+[41] "d.50"       "d.53"       "d.54"       "d.55"       "d.56"       "d.57"       "d.58"       "d.62"      
 </code></pre>
 
 ### Check and extract observation strings
@@ -260,37 +247,32 @@ unsure of nest age after floating eggs)
 ``` r
 uniqueStr <- vector()          # vector to fill with unique strings
 
-for(col in dateIndex) uniqueStr <- append(uniqueStr, unique(nestdata[col])) ## unique within columns
+for (col in dateIndex) uniqueStr <- append(uniqueStr, na.omit(unique(nestdata[col]))) ## unique within columns
 names(uniqueStr) <- names(nestdata[,dateIndex])
-
 uniqueUnique <- unique(unlist(uniqueStr)) ## unique across all columns
-uniqueUnique <- uniqueUnique[!is.na(uniqueUnique)]
 
 obsPerCol <- colSums(!is.na(nestdata[,dateIndex])) # Number of observations in each observation column 
 totalObs  <- sum(obsPerCol) # Total number of observations in data before extraction
-nUnique   <- length(uniqueUnique) # number of unique strings
-
 question <- uniqueUnique[str_detect(uniqueUnique, "\\?")]
 ```
 
-<span class="text-cat">Unique strings across all columns (73 strings
+<span class="text-cat">Unique strings across all columns (72 strings
 total): </span> <span class="text-cat">1E // 3E // 3E, 4d // 1E, 1d //
-3E, 7d // BON // 2E // nest not located // failed, empty // cannot
-locate // 2E, 2-3d // 3E, 3-5d // 2E, 2d // 3E, 3d // 3E, 4d, 1d, 1d //
-did not see // 3E, cattle disturbance // high water, could not check
-nest // 3E, 8d // 2E, 3d // 2E, 4d // 1E, 4d // failed // 2E, 1d // 3E,
-BON // BON, 3E // 3E, 5d // 2E, vertical at bottom // 3E, 1E pipped //
-1E, cracked BON active // D // 2E, 7-8d // 2C, 1E hatch day // ? //
-could not find // 0E, failed // 3E, 15d, 15d, 7d // D, coyote // 2E, BON
-// 2E, BON.eggs floated // F // 2C // 2E, ~10d // 2C?, 1E // 1E, angled
-on bottom // 1E washed? // 0E // W, 0E // 0E, U // 0E, S // 2E, ~14d //
-1E, hear cheeping & little taps // 2E, eggs feel cold // 2E, can hear
-chicks // 2E, 12d // 0C // H; 2C // 0E, W // 1E, 1C // hatch? // not
-found // 1C // not checked // 0E, chicks likely in area // no chicks or
-parents // 2C, a few days old // hatch day, 2C // Hatched // 2C, 1E //
-hatching, 3E // no stick, eggs, chicks // 3C // 2C, hatch</span>
-<span class="text-cat">\>\> strings w/ question marks: ? // 2C?, 1E //
-1E washed? // hatch?</span>
+BON // 2E // 3E, 7d // failed, empty // cannot locate // 2E, 2-3d // 3E,
+3-5d // nest not located // 2E, 2d // 3E, 3d // 3E, 4d, 1d, 1d // 3E,
+cattle disturbance // high water, could not check // 3E, 8d // 2E, 3d //
+2E, 4d // 1E, 4d // failed // did not see // 2E, 1d // D // 3E, BON //
+BON, 3E // 3E, 5d // 2E, vertical at bottom // 3E, 1E pipped // 1E,
+cracked BON active // 2C, 1E hatch day // ? // could not find // 0E,
+failed // 3E, 15d, 15d, 7d // D, coyote // 2E, BON // 2E, BON.eggs
+floated // F // 2E, 7-8d // 2C // 2E, ~10d // 1E, angled on bottom // 1E
+washed? // 2C?, 1E // W, 0E // 0E, U // 0E, S // 2E, ~14d // 1E, hear
+cheeping & little taps // 2E, eggs feel cold // 2E, starring // 2E, 12d
+// 0E // 0E, W // 0C // 1E, 1C // hatch? // not found // 1C // not
+checked // H; 2C // no chicks or parents // 2C, a few days old // hatch
+day, 2C // Hatched // 2C, 1E // hatching, 3E // no stick, eggs, chicks
+// 3C // 2C, hatch</span> <span class="text-cat">\>\> strings w/
+question marks: ? // 1E washed? // 2C?, 1E // hatch?</span>
 
 Save the strings for each column to file for easier viewing:
 
@@ -365,14 +347,14 @@ for (x in seq_along(matchStr)){
 
 <span class="text-cat">\>\> other (pattern=“not obs\|not
 \[Cc\]heck\|Didn’t check”) \>\> matches: </span>
-<pre style="margin: 10;"><code class=' text-cat '>[1] "high water, could not check nest" "not checked"                     
+<pre style="margin: 10;"><code class=' text-cat '>[1] "high water, could not check" "not checked"                
 </code></pre>
 
 <span class="text-cat">\>\> hatch (pattern=“\[Hh\]atch\|wet
 chick\|pip\|poops\|chick behavior\|star\|cheep”) \>\> matches: </span>
 <pre style="margin: 10;"><code class=' text-cat '>[1] "3E, 1E pipped"                   "2C, 1E hatch day"                "1E, hear cheeping & little taps"
-[4] "H; 2C"                           "hatch day, 2C"                   "Hatched"                        
-[7] "hatching, 3E"                    "2C, hatch"                      
+[4] "2E, starring"                    "H; 2C"                           "hatch day, 2C"                  
+[7] "Hatched"                         "hatching, 3E"                    "2C, hatch"                      
 </code></pre>
 
 <span class="text-cat">\>\> fail
@@ -384,8 +366,7 @@ viable\|ants”) \>\> matches: </span>
 
 <span class="text-cat">\>\> inactive (pattern=“0\[A-Z\]\|nothing\|no
 activity\|no chicks or parents\|empty”) \>\> matches: </span>
-<pre style="margin: 10;"><code class=' text-cat '>[1] "0E"                        "0E, S"                     "0C"                        "0E, chicks likely in area"
-[5] "no chicks or parents"     
+<pre style="margin: 10;"><code class=' text-cat '>[1] "0E, S"                "0E"                   "0C"                   "no chicks or parents"
 </code></pre>
 
 <span class="text-cat">\>\> birdOnNest (pattern=“nest
@@ -396,7 +377,7 @@ behavior\|\[Bb\]\[Oo\]\[Nn\]”) \>\> matches: </span>
 
 <span class="text-cat">\>\> missing (pattern=“no stick\|not see\|not
 f\|DNF\|DNL\|not locate”) \>\> matches: </span>
-<pre style="margin: 10;"><code class=' text-cat '>[1] "nest not located"       "cannot locate"          "did not see"            "could not find"        
+<pre style="margin: 10;"><code class=' text-cat '>[1] "cannot locate"          "nest not located"       "did not see"            "could not find"        
 [5] "not found"              "no stick, eggs, chicks"
 </code></pre>
 
@@ -410,12 +391,12 @@ matches: </span>
 <span class="text-cat">\>\> eggObs (pattern=“\[1-9\]\[\[Ee\]\]”) \>\>
 matches: </span>
 <pre style="margin: 10;"><code class=' text-cat '> [1] "1E"                     "3E"                     "3E, 4d"                 "1E, 1d"                
- [5] "3E, 7d"                 "2E"                     "2E, 2-3d"               "3E, 3-5d"              
+ [5] "2E"                     "3E, 7d"                 "2E, 2-3d"               "3E, 3-5d"              
  [9] "2E, 2d"                 "3E, 3d"                 "3E, 4d, 1d, 1d"         "3E, cattle disturbance"
 [13] "3E, 8d"                 "2E, 3d"                 "2E, 4d"                 "1E, 4d"                
-[17] "2E, 1d"                 "3E, 5d"                 "2E, vertical at bottom" "2E, 7-8d"              
-[21] "3E, 15d, 15d, 7d"       "2E, ~10d"               "1E, angled on bottom"   "2E, ~14d"              
-[25] "2E, eggs feel cold"     "2E, can hear chicks"    "2E, 12d"               
+[17] "2E, 1d"                 "3E, 5d"                 "2E, vertical at bottom" "3E, 15d, 15d, 7d"      
+[21] "2E, 7-8d"               "2E, ~10d"               "1E, angled on bottom"   "2E, ~14d"              
+[25] "2E, eggs feel cold"     "2E, 12d"               
 </code></pre>
 
 ``` r
@@ -442,7 +423,7 @@ filepath1 <- paste0("output/col_repl_", now, ".txt")
 
 replCols <- list()
 notExtr <- list()
-for( col in dateIndex ) {
+for (col in dateIndex) {
     replCols[[col]] = str_extract( nestdata[[col]], strings)
     oldCol <- nestdata[[col]]
     newCol <- replCols[[col]]
@@ -450,8 +431,7 @@ for( col in dateIndex ) {
     Cols   <- as.data.frame(cbind(ID,oldCol, newCol))
     Cols   <- subset(Cols, !is.na(oldCol))
     
-    if(any(is.na(Cols$newCol))){
-      # notExtr[[length(notExtr)+1]] <- paste(col, which(is.na(Cols$newCol)),sep=":")
+    if (any(is.na(Cols$newCol))){
       notExtr[[length(notExtr)+1]] <- paste(which(is.na(Cols$newCol)), col,sep=",")
     }
     column <- paste("\n column: ", col)
@@ -470,14 +450,11 @@ observations in the dataframe post-extraction and compare it to the
 values we got before (which we stored as obsPerCol and totalObs)
 
 ``` r
-for ( col in dateIndex ) nestdata[[col]] = replCols[[col]] # replace old column with new
+for (col in dateIndex) nestdata[[col]] = replCols[[col]] # replace old column with new
 
 obsPCAfter  <- colSums(!is.na(nestdata[,dateIndex])) # total per column
 totObsAfter <- sum(obsPCAfter)                      # total observations
-
-differ <- obsPerCol == obsPCAfter
-# comparing before and after, which columns differ in the number of observations that == NA?
-diffC <- which(differ==F) # ooo, it has names, that is cool
+diffC <- which(obsPerCol!=obsPCAfter ) # compare number of non-NA observations per column
 ```
 
 <span class="text-cat">\>\> columns with obs that weren’t
@@ -551,9 +528,9 @@ noObsInt <- which(is.na(nestData$obs_int))
 no_HD <- nestData$nest[which(is.na(nestData$estHD) & nestData$final_fate!="H")] ## missing est. hatch date
 ```
 
-<span class="text-cat">\>\> nests with long observation interval: 28 68
-81 164 169</span> <span class="text-cat"> \>\> nests missing observation
-interval: 28 68 81 164 169</span> <span class="text-cat"> \>\> nests
+<span class="text-cat">\>\> nests with long observation interval: 27 64
+77 159 164</span> <span class="text-cat"> \>\> nests missing observation
+interval: 27 64 77 159 164</span> <span class="text-cat"> \>\> nests
 missing estimated hatch date: 20009</span>
 
 ### Estimating nest age
@@ -655,7 +632,7 @@ nestData1 <- nestData %>%
 ```
 
 <pre style="margin: 10;"><code class=' text-cat '>[1] nest 1: 1E|BON|NA|NA (4 obs)               nest 2: NA|NA|NA (3 obs)                  
-[3] nest 3: 3E|3E|3E|NA|NA|NA|NA|NA|NA (9 obs) nest 4: 1E|BON|BON|2E|BON|NA|NA|NA (8 obs)
+[3] nest 3: 3E|3E|3E|NA|NA|NA|NA|NA (8 obs)    nest 4: 1E|BON|BON|2E|BON|NA|NA|NA (8 obs)
 [5] nest 5: 2E|unknown|unknown|NA|NA (5 obs)   nest 6: NA|NA|NA (3 obs)                  
 </code></pre>
 
@@ -693,15 +670,15 @@ nestData1 <- nestData1 %>%
 ```
 
 <span class="text-cat">\>\> status strings before: 1E / BON / 3E / fail
-/ 2C / 2E / not locate / ? / not check / hatch / 1C / not see / 0E / no
-stick / not f / 3C / Hatch / H / W / D / F / 0C / no chicks or parents /
+/ 2C / 2E / not locate / ? / not check / hatch / not see / 0E / no stick
+/ not f / 1C / 3C / Hatch / H / W / D / F / 0C / no chicks or parents /
 hatch?</span> <span class="text-cat">\>\> number of nests before:
 43</span> <span class="text-cat">\>\> status strings after replacing
 uncertain: 1E / BON / NA / 3E / 2E / unknown / hatch</span>
 <span class="text-cat">\>\> number of nests after replacing uncertain:
 43</span> <span class="text-cat">\>\> status strings after replacing
 active/inactive: 1 / unknown</span> <span class="text-cat">\>\> number
-of nests after replacing active/inactive: 21</span>
+of nests after replacing active/inactive: 19</span>
 
 ### Check some things.
 
@@ -711,16 +688,15 @@ format.
 <span class="text-cat">\>\> observation histories of first 6 nests -
 before: </span>
 <pre style="margin: 10;"><code class=' text-cat '>[1] nest 1: 1E|BON|3E|fail (4 obs)                nest 2: 3E|BON|fail (3 obs)                  
-[3] nest 3: 3E|3E|3E|3E|3E|BON|BON|3E|2C (9 obs)  nest 4: 1E|BON|BON|2E|BON|BON|1E|fail (8 obs)
+[3] nest 3: 3E|3E|3E|3E|3E|BON|3E|2C (8 obs)      nest 4: 1E|BON|BON|2E|BON|BON|1E|fail (8 obs)
 [5] nest 5: 2E|not locate|not locate|?|1E (5 obs) nest 6: 1E|not check|fail (3 obs)            
 </code></pre>
 
 <span class="text-cat">\>\> observation histories of first 6 nests
-(1=active, 0=inactive): </span> <span class="text-cat">\>\> pad str
-to29</span>
-<pre style="margin: 10;"><code class=' text-cat '>[1] nest 1: 1|1                        (2 obs) nest 2: 1|1|1                      (3 obs)
-[3] nest 3: 1|1|1|1|1                  (5 obs) nest 4: 1|unknown|unknown          (3 obs)
-[5] nest 5: 1|1|1|1|1                  (5 obs) nest 6: 1|unknown|1|1              (4 obs)
+(1=active, 0=inactive): </span>
+<pre style="margin: 10;"><code class=' text-cat '>[1] nest 1: 1|1 (2 obs)                           nest 2: 1|1|1 (3 obs)                        
+[3] nest 3: 1|1|1|1|1 (5 obs)                     nest 4: 1|unknown|unknown (3 obs)            
+[5] nest 5: 1|1|1|1 (4 obs)                       nest 6: 1|unknown|1 (3 obs)                  
 </code></pre>
 
 <div class="columns"
@@ -742,7 +718,7 @@ style="display: flex; justify-content: space-between; align-items: flex-start;">
 
 <pre style="margin: 10;"><code class=' text-cat '>
  Ca   D   F   H  Hu   S   U U-H 
-  1   3   1  11   1   2   1   1 
+  1   2   1  10   1   2   1   1 
 </code></pre>
 
 </div>
@@ -794,7 +770,7 @@ style="display: flex; justify-content: space-between; align-items: flex-start;">
 
 <pre style="margin: 10;"><code class=' text-cat '>
 CONI LETE SNPL WIPL 
-   5   11    1    4 
+   4   10    1    4 
 </code></pre>
 
 </div>
@@ -820,7 +796,7 @@ style="display: flex; justify-content: space-between; align-items: flex-start;">
 
 <pre style="margin: 10;"><code class=' text-cat '>
 HBRB ROJH RUTE RUTW 
-   1    1    7   12 
+   1    1    7   10 
 </code></pre>
 
 </div>
@@ -853,7 +829,7 @@ If all looks correct, write the final cleaned and filtered dataset
 (still in long format) to csv:
 
 ``` r
-if(file.exists("nest_data")==FALSE) dir.create("nest_data") 
+if (file.exists("nest_data")==FALSE) dir.create("nest_data") 
 filename2 <- paste0("output/nest_data_cleaned_",now,".csv")
 write.csv(nestData1, filename2)
 ```
