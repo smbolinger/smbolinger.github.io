@@ -1,0 +1,29 @@
+i
+// .highlight .c { color: #8b84b5; font-style: italic; } /* comments */
+// .highlight .k { color: #81ded8; font-style: bold; } /* keywords */
+// .highlight .s { color: #79c0ff; } /* strings */
+// .highlight .no { color: #bd2d9d; } /* constants */
+// .highlight .nf { color: #b37efd; } /* functions */
+// .highlight .mi { color: #3fb950; } /* integers */
+// .highlight .mf { color: #aabd2d; } /* floats */
+/* Define your custom colors here */
+// $custom-comment: #8b84b5;
+// $custom-string:  #79c0ff;
+// $custom-keyword: #81ded8;
+// $custom-bg:      #f6f8fa;
+
+/* Map them to the Minimal Mistakes highlight variables */
+// $code-background-color: $custom-bg;
+
+/* Base16 syntax variables used by Minimal Mistakes */
+// $base00: $custom-bg;       /* Default Background */
+// $base03: $custom-comment;  /* Comments, Invisibles, Line Highlighting */
+// $base0B: $custom-string;   /* Strings, Green */
+// $base0E: $custom-keyword;  /* Keywords, Storage, Selector, Purple */
+//
+// .page__content .highlight {
+//   // Targets all comment types (general, multi-line, single-line)
+//   span.c, span.cm, span.c1 { 
+//     font-style: italic !important; 
+//   }
+// }
