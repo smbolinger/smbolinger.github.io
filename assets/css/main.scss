@@ -29,6 +29,25 @@ $type-size-6 : 0.92em;   // ~12px
 $type-size-7 : 0.8em; // ~11px
 $type-size-8 : 0.7em;  // ~10px
 
+/* dracula syntax highlighting (base16) */
+/* https://github.com/dracula/base16-dracula-scheme */
+$base00: #282936; /* default bg */
+$base01: #3a3c4e; /* lighter bg */
+$base02: #4d4f68; /* selection bg */
+$base03: #8b84b5; /* comments, invisibles, line highlighting */
+$base04: #62d6e8; /* dark fg */
+$base05: #c8e3e6; /* default fg */
+$base06: #f1f2f8; /* light fg (rarely used)  */
+$base07: #f7f7fb; /* light bg (rarely used)  */
+$base08: #ea51b2; /* vars, XML tags, markup link text, markuplists, diff del */
+$base09: #ebff87; /* int, bool, const, XML attr, markup URL */
+$base0a: #bd2d9d; /* class, markup bold, search bg */ 
+$base0b: #79c0ff; /* strings, inherited class, markup code, diff inserted */
+$base0c: #a1efe4; /* support, regex, esc, markup quote */
+$base0d: #b37efd; /* func, methods, attr ID, headings */
+$base0e: #81ded8; /* kw, storage, selector, markup ital, diff changed */
+$base0f: #00f769; /* deprecated, open/close embedded lang tags */
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 .page {
@@ -281,10 +300,35 @@ figcaption {
   font-family: $monospace;
   // font-size: $type-size-5b;
   // background-color: #d7dce0;
-  background-color: #ebeef5;
-  color: #02121f;
-  font-size: 0.86rem;
+  // background-color: #ebeef5;
+  // background-color: #22114f;
+  // background-color: #6e6785;
+  // background-color: #3b3757;
+  // background-color: #42404a;
+  background-color: #403d4d;
+  // color: #02121f;
+  color: #adc3c9;
+  font-size: 0.7rem;
   line-height: 1.7;
+}
+
+// .highlight .c { color: #8b84b5 !important; font-style: italic !important; } /* comments */
+// .highlight .k { color: !important #81ded8; font-style: !important bold; } /* keywords */
+// .highlight .s { color: !important #79c0ff; } /* strings */
+// .highlight .no { color: !important #bd2d9d; } /* constants */
+// .highlight .nf { color: !important #b37efd; } /* functions */
+// .highlight .mi { color: !important #3fb950; } /* integers */
+// .highlight .mf { color: !important #aabd2d; } /* floats */
+
+.text-cat {
+  text-align: left;
+  // background-color: #ebeef5;
+  color: #109aad; 
+  // color: #02121f;
+  font-family: $monospace;
+  font-size: 0.7rem;
+  // margin: 35px;
+
 }
 
 /* ------ OTHER STYLING ------------------------------------------------ */
