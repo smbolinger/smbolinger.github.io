@@ -4,9 +4,9 @@ permalink: /research/
 home_disp: true
 excerpt: |
 
-  * Integrated population models 
   * Integration of diverse tools/datasets in long-term monitoring of avian populations
   * Migratory connectivity and stopover usage in birds
+  * Integrated population models 
   * Using simulation models to improve observation/study design (virtual ecologist) 
   * Beach-nesting bird ecology and management
   * Aerial insectivore ecology and management
@@ -19,12 +19,12 @@ excerpt: |
 
 ------
 
-* Integrated population models 
 * Integration of diverse tools/datasets in long-term monitoring of avian populations
+* Migratory connectivity and stopover usage in birds
 * Integrated population models 
-* Migratory connectivity in birds
 * Using simulation models to improve observation/study design (virtual ecologist) 
-* Beach-nesting bird ecology 
+* Beach-nesting bird ecology and management
+* Aerial insectivore ecology and management
 <!--more-->
 
 ------
