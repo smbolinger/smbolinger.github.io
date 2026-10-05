@@ -9,6 +9,8 @@ header:
 excerpt: "GLM for examining effects of nest age, date, true fate (determined from cameras), species, and observation interval on ability of observers to a) determine fate in the field (vs. marking unknown) and b) correctly determine fate in field."
 ---
 
+------
+
 ### Code for loading, cleaning & formatting the nest data from an .xlsx file where technicians entered observations:
 
 ------
