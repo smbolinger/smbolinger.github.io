@@ -5,9 +5,12 @@ home_disp: true
 excerpt: |
 
   * Integrated population models 
-  * Migratory connectivity in birds
+  * Integration of diverse tools/datasets in long-term monitoring of avian populations
+  * Migratory connectivity and stopover usage in birds
   * Using simulation models to improve observation/study design (virtual ecologist) 
-  * Beach-nesting bird ecology 
+  * Beach-nesting bird ecology and management
+  * Aerial insectivore ecology and management
+
 ---
 
 <!-- ------- -->
@@ -104,7 +107,7 @@ The Common Nighthawk is a crepuscular aerial insectivore that nests throughout m
 
 ### Nest survival bias & implications for demographic projections
 
-In studies of beach-nesting birds, daily survival rate (DSR) is commonly used in place of raw percentage nest survival,  due to the inherent left-truncation (some nests will fail before they are ever encountered) and censoring (some nests will have unknown final fate) of nest data. Estimates of DSR, however, rely on accurate nest fate classification. In one study, I used motion-activated cameras to investigate the factors associated with nest fate misclassification. Such cameras are increasingly used to mitigate some of the bias associated with using field evidence to determine nest fates, but their use is not practical or advisable in all cases, and they cannot fully replace human observers. Storms and other disturbances can mask true nest fates, leading to uncertain fates that must be excluded from analysis, or incorrect fates. In a separate dissertation chapter, I investigated the effects on DSR of different levels of nests marked with incorrect fate and nests marked unknown (and therefore excluded).
+In studies of beach-nesting birds, daily survival rate (DSR) is commonly used in place of raw percentage nest survival,  due to the inherent left-truncation (some nests will fail before they are ever encountered) and censoring (some nests will have unknown final fate) of nest data. Estimates of DSR, however, rely on accurate nest fate classification. In one study, I used motion-activated cameras to investigate the factors associated with nest fate misclassification. Such cameras are increasingly used to mitigate some of the bias associated with using field evidence to determine nest fates, but their use is not practical or advisable in all cases, and they cannot fully replace human observers. Storms and other disturbances can mask true nest fates, leading to uncertain fates that must be excluded from analysis, or incorrect fates. In a separate dissertation chapter, I investigated the effects on DSR of different proportions of nests marked with incorrect fate and nests marked unknown (and therefore excluded).
 
 <!-- <p align="center"> -->
 <!--   <img src="{{ '/assets/images/LETE-scale.webp' | relative_url }}" alt="Image 1" width="35%"> -->
