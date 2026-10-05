@@ -17,6 +17,10 @@ excerpt: |
 <!-- <div class="indented-section"> -->
 <!-- # Research interests -->
 
+------
+
+* Integrated population models 
+* Integration of diverse tools/datasets in long-term monitoring of avian populations
 * Integrated population models 
 * Migratory connectivity in birds
 * Using simulation models to improve observation/study design (virtual ecologist) 
