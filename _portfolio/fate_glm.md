@@ -11,6 +11,8 @@ excerpt: "GLM for examining effects of nest age, date, true fate (determined fro
 
 ### Code for loading, cleaning & formatting the nest data from an .xlsx file where technicians entered observations:
 
+------
+
 <!-- <h2 style="text-indent: 30px;">1. Cleaning the nest data({{ '/projects/fate_glm/clean_format/' | relative_url }})</h2> -->
 
 <!-- 1. <h2 style="text-indent: 30px;"><a href='/projects/fate_glm/clean_format/'>1. Cleaning the nest data</a></h2> -->
