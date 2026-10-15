@@ -4,7 +4,7 @@ permalink: /projects/nest-simulation/
 github_repo: "smbolinger/sim_model"
 link_page: true
 preview_image: true
-excerpt: "Virtual ecologist simulation of nest observation process. Used to examine effects of varying proportion of nest fates marked unknown (and excluded from DSR analysis) and proportion of nest fates misclassified."
+excerpt: "Virtual ecologist simulation of nest observation process. Used to examine effects of varying proportion of nest fates marked unknown (and final interval excluded from DSR analysis) and proportion of nest fates misclassified."
 header:
   teaser: "assets/images/submodels1.webp"
 ---
@@ -40,7 +40,8 @@ I used synthetic data to assess the impact of increasing numbers of uncertain-fa
 
     * <span style="color: #7A67EE; font-weight: bold;">Observer 2</span> marks these nest fates "unknown" 
 
-    This means some fraction of nests are either excluded because fate is unknown, or are misclassified because they did not truly flood.
+    This means that for Observer 1, some proportion of nests that didn't actually flood get misclassified as "flooded", which should negatively bias DSR.
+    And for Observer 2, some fraction of nests that actually flooded have the final interval excluded because fate is unknown, which should positively bias DSR.
 
 
 <!-- <figure style="width: 700px;"> -->

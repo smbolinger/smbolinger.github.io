@@ -34,3 +34,7 @@ In ornithology, we had even less time to work on learning R, so these scripts re
 * [Point count analysis](https://github.com/smbolinger/r_lab_exercises/blob/main/point_count_analysis.Rmd)
 
     Students conducted a series of point counts at randomly selected locations on or around campus, recording species and number, and also estimating the distance to the bird(s). They also recorded some covariates to use in the analysis (number of cars, people, cats; distance to trees, water). This script guides students in comparing two or more models to explain the occurrence of a species/family/guild of their choice using AICc.
+
+* [Using Louisiana eBird data](https://github.com/smbolinger/r_lab_exercises/blob/main/ebird_analysis.Rmd)
+
+    Students conducted a series of point counts at randomly selected locations on or around campus, recording species and number, and also estimating the distance to the bird(s). They also recorded some covariates to use in the analysis (number of cars, people, cats; distance to trees, water). This script guides students in comparing two or more models to explain the occurrence of a species/family/guild of their choice using AICc.
